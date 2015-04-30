@@ -6,6 +6,7 @@
   "dependencies": {
     "browser-sync": "^2.6.9",
     "browserify": "^9.0.8",
+    "express": "^4.12.3",
     "gulp-if": "^1.2.5",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
@@ -19,6 +20,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Einari Naukkarinen",
   "license": "ISC"
 }
