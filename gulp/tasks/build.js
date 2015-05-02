@@ -9,13 +9,12 @@ var gulpif = require('gulp-if');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 
-
+// builds either minified or non-minified bundle in dist/.
 gulp.task('build', function() {
-
 	return browserify('./src/app.js').bundle()
-    .pipe(source('bundle.js')) // gives streaming vinyl file object
-    .pipe(gulpif(argv.min, buffer())) // <----- convert from streaming to buffered vinyl file object
-    .pipe(gulpif(argv.min, uglify())) // now gulp-uglify works 
+    .pipe(source('bundle.js'))
+    .pipe(gulpif(argv.min, buffer())) 
+    .pipe(gulpif(argv.min, uglify()))
     .pipe(gulpif(argv.min, rename({suffix: '.min'})))
     .pipe(gulp.dest('./dist/'));
 });

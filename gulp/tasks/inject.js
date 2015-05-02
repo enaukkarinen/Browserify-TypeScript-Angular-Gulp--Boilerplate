@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var inject = require('gulp-inject');
  
+ // this task builds the bundle.js and links it in the index.html.
 gulp.task('inject', ['build'], function () {
 
   	var target = gulp.src('./src/index.html');
