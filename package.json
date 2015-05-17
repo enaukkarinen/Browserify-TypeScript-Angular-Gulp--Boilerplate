@@ -25,6 +25,8 @@
     "gulp-util": "^3.0.4",
     "require-dir": "^0.3.0",
     "tiny-lr": "^0.1.5",
+    "tsd": "^0.6.0",
+    "tsify": "^0.10.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^3.8.0"
