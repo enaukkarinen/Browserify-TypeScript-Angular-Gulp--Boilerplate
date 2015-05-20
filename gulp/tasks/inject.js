@@ -2,12 +2,11 @@ var gulp = require('gulp');
 var inject = require('gulp-inject');
  
  // this task builds the bundle.js and links it in the index.html.
-gulp.task('inject', ['build'], function () {
+gulp.task('inject', function () {
 
-  	var target = gulp.src('./src/index.html');
-  	// It's not necessary to read the files (will speed up things), we're only after their paths: 
-  	var sources = gulp.src(['./dist/*.js', './src/**/*.css'], {read: false});
+  	var target = gulp.src('./dist/index.html');
 
-  	return target.pipe(inject(sources))
-  	.pipe(gulp.dest('./src'));
+  	return target.pipe(
+		  inject(gulp.src(['./dist/*.js', './src/**/*.css'], {read: false, ignorePath: 'dist'})))
+  	.pipe(gulp.dest('./dist'));
 });

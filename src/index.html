@@ -1,19 +1,21 @@
+
 <!doctype html>
-<html lang="en" ng-app="myApp">
-<head>
-  <title>My Awesome App</title>
-</head>
-<body ng-controller='WelcomeCtrl'>
-  	<h1>My Awesome App</h1>
-  	<p>{{testVar}}</p>
+<html lang="en" data-framework="angularjs">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AngularJS • TodoMVC</title>
+        <link rel="stylesheet" href="bower_components/todomvc-common/base.css">
+        <style>[ng-cloak] { display: none; }</style>
+    </head>
+    <body ng-app="todomvc">
+        <ng-view />
+		{{3 + 3}}
+		
+		
+		<!-- inject:js -->
+	  	<!-- endinject -->
+    </body>
+</html>
 
-	<!-- inject:js -->
 
-
-
-  	<script src="/dist/bundle.js"></script>
-
-
-
-  	<!-- endinject -->
-</body>

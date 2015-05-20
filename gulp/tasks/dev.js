@@ -1,13 +1,11 @@
-'use strict';
-
-var gulp = require('gulp');
-var embedlr = require('gulp-embedlr');
-var refresh = require('gulp-livereload');
-var lrserver = require('tiny-lr')();
-var express = require('express');
-var livereload = require('connect-livereload');
-var livereloadport = 35729;
-var serverport = 5000;
+var embedlr = require('gulp-embedlr'),
+    refresh = require('gulp-livereload'),
+    lrserver = require('tiny-lr')(),
+    express = require('express'),
+    livereload = require('connect-livereload'),
+    livereloadport = 35729,
+    serverport = 5000,
+    gulp = require('gulp');
 
 // Set up an express server (but not starting it yet)
 var server = express();
@@ -21,11 +19,11 @@ server.all('/*', function(req, res) {
 });
 
 // Dev task
-gulp.task('dev',['build', 'views', 'watch'], function() {
+gulp.task('dev', function() {
   // Start webserver
   server.listen(serverport);
   // Start live reload
   lrserver.listen(livereloadport);
   // Run the watch task, to keep taps on changes
+  gulp.run('watch');
 });
-
