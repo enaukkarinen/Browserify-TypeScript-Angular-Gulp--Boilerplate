@@ -1,15 +1,12 @@
 /// <reference path="../typings/angularjs/angular.d.ts" />
 
-var todomvc = angular.module('todomvc', ['ngRoute'])
-	.config(function ($routeProvider) {
-		$routeProvider.when('/', {
-			controller: 'TodoCtrl',
-			templateUrl: 'todomvc-index.html'
-		}).otherwise({
-			redirectTo: '/'
-		});
-	});
-	
+var myAppModule = angular.module('todomvc', []);
+
+myAppModule.filter('greet', function() {
+ return function(name) {
+    return 'Hello, ' + name + '!';
+  };
+});	
 	
 import model = require('./model/Person');
 
