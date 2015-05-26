@@ -1,17 +1,17 @@
 
 
-var gulp = require('gulp');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
+var gulp        = require('gulp');
+var browserify  = require('browserify');
+var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
 
-var argv = require('yargs').argv;
-var gulpif = require('gulp-if');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var tsify = require('tsify');
+var argv        = require('yargs').argv;
+var gulpif      = require('gulp-if');
+var uglify      = require('gulp-uglify');
+var rename      = require('gulp-rename');
+var tsify       = require('tsify');
 
-// builds either minified or non-minified bundle in dist/.
+// builds either minified or non-minified main app bundle in dist/.
 gulp.task('main', function() {
 	return browserify('./src/app.ts')
     .plugin(tsify, { noImplicitAny: false, module : 'amd', target: 'ES5' })
