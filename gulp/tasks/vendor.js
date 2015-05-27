@@ -13,26 +13,22 @@ var rename        = require('gulp-rename');
 
 // builds either minified or non-minified main dependency bundle in dist/.
 gulp.task('vendor', function () {
+
+  var bowerJSON = {};
+  var resolvedPaths = [];
+  try { bowerJSON = require('../../bower.json'); } 
+  catch (e) { console.log('bower.json is missing...'); }    
   
-  dasdasd();
+  _.keys(bowerJSON.dependencies).forEach(function (id) { 
+    resolvedPaths.push(bowerResolve.fastReadSync(id));
+  });
+  resolvedPaths.forEach(function(path) { gutil.log(path); });
   
-  function dasdasd(){
-    
-    var bowerJSON = {};
-    var resolvedPaths = [];
-    try { bowerJSON = require('../../bower.json'); } 
-    catch (e) { console.log('bower.json is missing...'); }    
-    
-    _.keys(bowerJSON.dependencies).forEach(function (id) { 
-      resolvedPaths.push(bowerResolve.fastReadSync(id));
-    });
-    resolvedPaths.forEach(function(path) { gutil.log(path); });
-    
-    gulp.src(resolvedPaths)
-    .pipe(concat({ path: 'lib.js'}))
-    .pipe(gulpif(argv.min, uglify()))
-    .pipe(gulpif(argv.min, rename({suffix: '.min'})))
-    .pipe(gulp.dest('./dist'));
-  }
+  gulp.src(resolvedPaths)
+  .pipe(concat({ path: 'lib.js'}))
+  .pipe(gulpif(argv.min, uglify()))
+  .pipe(gulpif(argv.min, rename({suffix: '.min'})))
+  .pipe(gulp.dest('./dist'));
+
   
 });
