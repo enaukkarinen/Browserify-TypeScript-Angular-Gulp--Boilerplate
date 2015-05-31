@@ -1,5 +1,5 @@
 
 var gulp = require('gulp');
 
-gulp.task('build', ['main', 'vendor', 'views']);
+gulp.task('build', ['app', 'vendor', 'views']);
 
