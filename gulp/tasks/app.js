@@ -10,10 +10,11 @@ var gulpif      = require('gulp-if');
 var uglify      = require('gulp-uglify');
 var rename      = require('gulp-rename');
 var tsify       = require('tsify');
+var tslint      = require('gulp-tslint');
 var exorcist    = require('exorcist');
 
 // builds either minified or non-minified main app bundle in dist/.
-gulp.task('app', function() {
+gulp.task('app', ['tslint'],  function() {
 	return browserify({debug: true})
     .add('./src/app.ts')
     .plugin(tsify)

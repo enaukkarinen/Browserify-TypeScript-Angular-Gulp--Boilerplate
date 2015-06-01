@@ -1,11 +1,11 @@
 
 export class Person {
 	name: string;
-	constructor(name:string){
+	constructor(name: string) {
 		this.name = name;
 	}
-	
-	dance(){
+
+	dance() {
 		console.log(this.name + " is dancing.");
 	}
 }

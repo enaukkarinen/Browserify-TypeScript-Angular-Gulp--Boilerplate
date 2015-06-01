@@ -11,16 +11,16 @@ gulp.task('server', function() {
 
   var server = express();
 
-  // log all requests to the console
+// log all requests to the console
   server.use(morgan('dev'));
   server.use(express.static('./dist'));
 
-  // Serve index.html for all routes to leave routing up to Angular
+// Serve index.html for all routes to leave routing up to Angular
   server.all('/*', function(req, res) {
-      res.sendFile('index.html', { root: 'dist' });
+    res.sendFile('index.html', {root:'dist'});
   });
-
-  // Start webserver if not already running
+  
+// Start webserver if not already running
   var s = http.createServer(server);
   s.on('error', function(err){
     if(err.code === 'EADDRINUSE'){
