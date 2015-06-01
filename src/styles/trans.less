@@ -1,0 +1,17 @@
+/* Mixin */
+.transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+ 
+/* Implementation */
+#somediv {
+    .transition(all, 0.5s, ease-in);
+} 
+ 
+#somediv:hover {
+    opacity: 0;
+} 

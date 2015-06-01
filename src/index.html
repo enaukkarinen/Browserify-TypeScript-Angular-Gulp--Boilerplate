@@ -1,16 +1,18 @@
-
 <!doctype html>
 <html lang="en" data-framework="angularjs">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>AngularJS • TodoMVC</title>
-        <style>[ng-cloak] { display: none; }</style>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
     </head>
-    <body ng-app="todomvc">
+    <body ng-app="todomvc">       
         <ng-view />
+        
+        <button type="button" class="btn btn-default">Bootstrap test</button>
 		{{3 + 3}}
-		{{ 'World' | greet }}
+		<div id="somediv">{{ 'World' | greet }}</div>
         
         <script src="lib.js"></script>
         <script src="app.js"></script>

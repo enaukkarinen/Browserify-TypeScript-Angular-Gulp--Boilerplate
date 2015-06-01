@@ -25,8 +25,11 @@ gulp.task('vendor', function () {
     resolvedPaths.push(bowerResolve.fastReadSync(id));
   });
   
-  resolvedPaths.forEach(function(path) { gutil.log(path); });
-
+  if(argv.verbose) {
+    gutil.log(gutil.colors.blue('Bundling the following 3rd party packages:'));
+    resolvedPaths.forEach(function(path) { gutil.log(gutil.colors.blue(path)); });
+  }
+  
   return gulp.src(resolvedPaths)
   .pipe(gulpif(!argv.min, sourcemaps.init()))
   .pipe(concat({ path:'lib.js'}))
