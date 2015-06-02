@@ -10,6 +10,9 @@ module.exports = function() {
       './bower_components/lodash/lodash.js',
       './bower_components/angular/./angular.js',
       './bower_components/bootstrap/dist/js/bootstrap.js'
+    ],
+    vendorstyles: [
+      './bower_components/bootstrap/dist/css/bootstrap.css'
     ]  
   };
 };
