@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var config = require('../config.js')();
 var gutil = require('gulp-util');
+var browserSync = require('browser-sync');
 
 gulp.task('serve', function(){
 	console.log(config.defaultport);
@@ -29,6 +30,7 @@ gulp.task('serve', function(){
 	})
 	.on('start', function(){
 		gutil.log(gutil.colors.cyan('*** nodemon started...'));
+		startBrowserSync();
 	})
 	.on('crash', function(){
 		gutil.log(gutil.colors.red('*** NODEMON CRASHED: script crashed for some reason.'));
@@ -37,5 +39,33 @@ gulp.task('serve', function(){
 		gutil.log(gutil.colors.magenta('*** nodemon exited cleanly...'));
 	});
 	
-	
+	function startBrowserSync(){
+		
+		console.log(browserSync.isActive);
+		if(browserSync.isActive){ return; }
+		
+		var port = process.env.PORT || config.defaultport;
+		console.log('starting browser-sync on port ' + port);
+		
+		var options = {
+			proxy: 'localhost:' + port,
+			port: 3000,
+			browser: 'firefox',
+			files: ['./src/client/**/*.*'],
+			ghostMode: {
+				clicks: true,
+				locations: false,
+				forms: true,
+				scrolls: true      
+			},
+			injectChanges: false, // ?
+			logFileChanges: true,
+			logLevel: 'debug',
+			logPrefix: 'gulp-patterns',
+			notify: true,
+			reloadDelay: 1000
+			};
+		return browserSync(options);
+		
+	}
 });
