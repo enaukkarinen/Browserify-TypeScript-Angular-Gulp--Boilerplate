@@ -2,12 +2,18 @@
 module.exports = function() {
   return {
     // paths
-    allts: '.src/**/*.ts',
-    allhtml: '.src/**/*.html',
-    less: 'src/styles/**/*.less',
+    allts: '.src/client/**/*.ts',
+    allhtml: '.src/client/**/*.html',
+    less: 'src/client/styles/**/*.less',
+    client: './src/client/',
     dist: './dist/',
     
-    // vendor bundle
+    // node settings
+    server: './src/server/',
+    nodeapp: './src/server/app.js',
+    defaultport: 7203,
+    
+    // vendor js bundle
     vendorscripts: [
       './bower_components/jquery/dist/jquery.js',
       './bower_components/lodash/lodash.js',
@@ -18,6 +24,7 @@ module.exports = function() {
     // vendor css bundle
     vendorstyles: [
       './bower_components/bootstrap/dist/css/bootstrap.css'
-    ]  
+    ]
+    
   };
 };

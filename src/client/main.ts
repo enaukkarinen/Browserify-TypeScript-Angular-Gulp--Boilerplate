@@ -1,4 +1,4 @@
-/// <reference path="../typings/angularjs/angular.d.ts" />
+/// <reference path="../../typings/angularjs/angular.d.ts" />
 
 var myAppModule = angular.module("todomvc", []);
 
