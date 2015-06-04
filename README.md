@@ -1,3 +1,3 @@
 
 -exclude sourcemaps from styles.css
--vendor dependencies need to be in right order
+-delete nodemon file and fix serve nodemon.restart('starts second bs')
