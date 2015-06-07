@@ -5,28 +5,31 @@ var nodemon = require('gulp-nodemon');
 var config = require('../config.js')();
 var gutil = require('gulp-util');
 var browserSync = require('browser-sync');
+var args = require('yargs').argv;
 
-gulp.task('serve', function(){
-	console.log(config.defaultport);
-	console.log(config.nodeapp);
-	console.log(config.server);
+gulp.task('serve', ['watch'], function(){
+
 	var isDev = true;
 	var port = process.env.PORT || config.defaultport;
 	var nodeOptions = {
 		script: config.nodeapp, 
-		delayTIme: 1,
+		delayTime: 1,
 		env: {
 			'PORT': port,
 			'NODE_ENV': isDev ? 'dev' : 'build'
 		},
-		watch: [config.server] 
-		
+		watch: [config.server]		
 	};
 	
 	return nodemon(nodeOptions)
 	.on('restart', function(ev){
 		gutil.log(gutil.colors.green('*** nodemon restarted...'));
 		gutil.log(gutil.colors.green('files changed on restart:\n', ev));
+		
+		setTimeout(function() {
+			browserSync.notify('reloading now...');
+			browserSync.reload({stream: false});			
+		}, 500);
 	})
 	.on('start', function(){
 		gutil.log(gutil.colors.cyan('*** nodemon started...'));
@@ -41,8 +44,9 @@ gulp.task('serve', function(){
 	
 	function startBrowserSync(){
 		
-		console.log(browserSync.isActive);
-		if(browserSync.isActive){ return; }
+		if(browserSync.active) { 
+			return; 
+		}
 		
 		var port = process.env.PORT || config.defaultport;
 		console.log('starting browser-sync on port ' + port);
@@ -50,7 +54,7 @@ gulp.task('serve', function(){
 		var options = {
 			proxy: 'localhost:' + port,
 			port: 3000,
-			browser: 'firefox',
+			browser: 'chrome',
 			files: ['./src/client/**/*.*'],
 			ghostMode: {
 				clicks: true,

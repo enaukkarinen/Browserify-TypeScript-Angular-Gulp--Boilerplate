@@ -3,12 +3,12 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var config = require('../config.js')();
 
-gulp.task('watch', ['js-watch', 'less-watch', 'html-watch'], function() { 
+gulp.task('watch', ['ts-watch', 'less-watch', 'html-watch'], function() { 
     gutil.log(gutil.colors.green('WATCHING EVERYTHING!'));
 });
 
-gulp.task("js-watch", function() {
-    gulp.watch(config.allts, ['app']);
+gulp.task("ts-watch", function() {
+    gulp.watch(config.allts, ['main']);
 });
 
 gulp.task("html-watch", function() {

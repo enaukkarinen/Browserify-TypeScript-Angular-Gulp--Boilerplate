@@ -6,6 +6,6 @@ export class Person {
 	}
 
 	dance() {
-		console.log(this.name + " is dancing.");
+		console.log(this.name + " is dancing!");
 	}
 }
