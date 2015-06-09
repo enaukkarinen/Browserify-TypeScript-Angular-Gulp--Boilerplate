@@ -2,9 +2,9 @@
 module.exports = function() {
   return {
     // paths
-    allts: '.src/client/**/*.ts',
-    allhtml: '.src/client/**/*.html',
-    less: 'src/client/styles/**/*.less',
+    allts: './src/client/**/*.ts',
+    allhtml: './src/client/**/*.html',
+    less: './src/client/styles/**/*.less',
     client: './src/client/',
     dist: './dist/',
     
