@@ -4,10 +4,6 @@
   "authors": [
     "Einari Naukkarinen <einari.naukkarinen@outlook.com>"
   ],
-  "moduleType": [
-    "amd",
-    "es6"
-  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
