@@ -4,7 +4,7 @@ module.exports = function() {
     // paths
     allts: './src/client/**/*.ts',
     allhtml: './src/client/**/*.html',
-    less: './src/client/assets/styles/**/*.less',
+    less: './src/client/assets/styles/**/*.*',
     allimages: './src/client/assets/images/**/*.*',
     fonts: './src/client/assets/fonts/',
     client: './src/client/',
@@ -25,8 +25,20 @@ module.exports = function() {
     
     // vendor css bundle
     vendorstyles: [
-      './bower_components/bootstrap/dist/css/bootstrap.css'
-    ]
-
+      './bower_components/bootstrap/dist/css/bootstrap.css',
+      './bower_components/font-awesome/css/font-awesome.css'
+    ],
+    
+    'fonts': {
+      'src': [
+        './bower_components/font-awesome/fonts/FontAwesome.otf',
+        './bower_components/font-awesome/fonts/fontawesome-webfont.eot',
+        './bower_components/font-awesome/fonts/fontawesome-webfont.svg',
+        './bower_components/font-awesome/fonts/fontawesome-webfont.ttf',
+        './bower_components/font-awesome/fonts/fontawesome-webfont.woff'
+      ],
+      'dest': './dist/fonts/'     
+    }
+    
   };
 };

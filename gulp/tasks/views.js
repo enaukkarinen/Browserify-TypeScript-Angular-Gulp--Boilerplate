@@ -7,7 +7,7 @@ gulp.task('views', function() {
   gulp.src('./src/client/index.html')
   .pipe(gulp.dest('dist/'));
 
-  gulp.src('./src/client/views/**/*')
-  .pipe(gulp.dest('dist/views/'));
+  gulp.src('./src/client/features/**/*.html')
+  .pipe(gulp.dest('dist/features/'));
 
 });
