@@ -6,5 +6,7 @@ var tslint = require('gulp-tslint');
 gulp.task('tslint', function(){
       gulp.src(config.allts)
         .pipe(tslint())
-        .pipe(tslint.report('verbose'));
+        .pipe(tslint.report('prose', {
+          emitError: false
+        }));
 });

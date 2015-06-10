@@ -7,13 +7,16 @@
         <link rel="stylesheet" type="text/css" href="lib.css">
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
-    <body ng-app="todomvc">       
+    <body ng-app="app">       
         <ng-view />
         <p>hello</p>
         <button type="button" class="btn btn-default">Bootstrap test</button>
 		{{3 + 3}}
 		<div id="somediv">{{ 'World' | greet }}</div>
         
+        <div ng-controller="NavBarController">
+            {{message}}
+        </div>
         <script src="lib.js"></script>
         <script src="main.js"></script>
     </body>

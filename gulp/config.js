@@ -4,9 +4,9 @@ module.exports = function() {
     // paths
     allts: './src/client/**/*.ts',
     allhtml: './src/client/**/*.html',
-    less: './src/client/styles/**/*.less',
-    allimages: './src/client/images/**/*.*',
-    fonts: './src/client/fonts/',
+    less: './src/client/assets/styles/**/*.less',
+    allimages: './src/client/assets/images/**/*.*',
+    fonts: './src/client/assets/fonts/',
     client: './src/client/',
     dist: './dist/',
     

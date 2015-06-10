@@ -23,7 +23,7 @@ gulp.task('browsersync', function(){
       },
   	  injectChanges: false, // ?
   	  logFileChanges: true,
-  	  logLevel: 'debug',
+  	  logLevel: 'info',
   	  logPrefix: 'gulp-patterns',
   	  notify: true,
   	  reloadDelay: 1000

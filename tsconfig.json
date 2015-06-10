@@ -1,7 +1,6 @@
 {
-    "compilerOptions": {
-        "target": "ES5",
-        "module": "amd",
+	"compilerOptions": {
+        "module": "commonjs",
         "sourceMap": true
     }
 }
