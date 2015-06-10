@@ -10,7 +10,7 @@ gulp.task('browsersync', function(){
     return;
   }
   var port = process.env.PORT || config.defaultport;
-  console.log('portti on ' + port);
+
   var options = {
       proxy: 'localhost:' + port,
       port: 3000,
