@@ -5,6 +5,8 @@ module.exports = function() {
     allts: './src/client/**/*.ts',
     allhtml: './src/client/**/*.html',
     less: './src/client/styles/**/*.less',
+    allimages: './src/client/images/**/*.*',
+    fonts: './src/client/fonts/',
     client: './src/client/',
     dist: './dist/',
     
