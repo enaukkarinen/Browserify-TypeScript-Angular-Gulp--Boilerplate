@@ -1,0 +1,100 @@
+@import "variables.less";
+@import "mixins.less";
+
+.opt-panel-header {
+	text-align: center;
+	.container {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+	img {
+		display: block;
+		margin: 0 auto 20px;
+	}
+	.intro-text {
+		.name {
+			display: block;
+			font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 2em;
+		}
+		.skills {
+			font-size: 1.25em;
+			font-weight: 300;
+		}
+	}		
+}
+
+@media(min-width:768px) {
+	.opt-panel-header {
+		.container {
+			padding-top: 200px;
+			padding-bottom: 100px;
+		}
+		.intro-text {
+			.name {
+				font-size: 4.75em;
+			}
+			.skills {
+				font-size: 1.75em;
+			}
+		}
+	}
+}
+
+.opt-panel{
+	text-align: center;
+	h2 {
+	  margin: 0;
+  	font-size: 3em;
+	}
+	.container {
+		padding-top: 100px;
+		padding-bottom: 50px;
+	}
+	img {
+		display: block;
+		margin: 0 auto 20px;
+	}
+	.intro-text {
+		.name {
+			display: block;
+			font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 2em;
+		}
+		.skills {
+			font-size: 1.25em;
+			font-weight: 300;
+		}
+	}		
+}
+
+@media(min-width:768px) {
+	.opt-panel {
+		.container {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+		.intro-text {
+			.name {
+				font-size: 4.75em;
+			}
+			.skills {
+				font-size: 1.75em;
+			}
+		}
+	}
+}
+
+.opt-primary {
+	background-color: @primary-background;
+	color: @primary-color;
+}
+
+.opt-secondary {
+	background-color: @secondary-background;
+	color: @secondary-color;
+}

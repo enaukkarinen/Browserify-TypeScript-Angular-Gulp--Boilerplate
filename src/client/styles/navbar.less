@@ -1,5 +1,5 @@
 
-@import "colors.less";
+@import "variables.less";
 
 
 .navbar {
@@ -21,8 +21,8 @@
 
 .navbar-default,
 .navbar-inverse {
-    background-color: @base-background;
-	border: none;
+    background-color: @primary-background;
+	border-bottom: @primary-border;
 }
 
 @media(min-width:768px) {
@@ -32,6 +32,7 @@
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
 	    .navbar-brand {
+			color: @primary-color;
 	        font-size: 2em;
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;

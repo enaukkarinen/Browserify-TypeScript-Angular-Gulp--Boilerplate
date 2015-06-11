@@ -42,7 +42,7 @@ module.exports = function() {
     // images
     images: {
       src: client + 'assets/images/**/*.*',
-      dest: dist + 'assets/images/'
+      dest: dist + 'images/'
     },
     
     //fonts
@@ -55,7 +55,7 @@ module.exports = function() {
         './bower_components/font-awesome/fonts/fontawesome-webfont.ttf',
         './bower_components/font-awesome/fonts/fontawesome-webfont.woff'
       ],
-      dest: dist + 'assets/fonts/'     
+      dest: dist + 'fonts/'     
     }
     
   };
