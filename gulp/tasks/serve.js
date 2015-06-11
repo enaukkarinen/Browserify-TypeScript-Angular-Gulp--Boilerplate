@@ -7,7 +7,7 @@ var gutil = require('gulp-util');
 var browserSync = require('browser-sync');
 var args = require('yargs').argv;
 
-gulp.task('serve', ['watch'], function(){
+gulp.task('serve', ['build', 'watch'], function(){
 
 	var isDev = true;
 	var port = process.env.PORT || config.defaultport;
