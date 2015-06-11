@@ -9,7 +9,7 @@ class Nav {
 
 export function NavBarDirective () : ng.IDirective {
 	
-	console.log('build directive');
+	console.log("build directive");
 	return {
 		templateUrl: "features/common/NavBar.html",
         controller: Nav,
@@ -19,6 +19,3 @@ export function NavBarDirective () : ng.IDirective {
 }
 
 angular.module("NavBarModule").directive("optNavBar", NavBarDirective);
-
-
-

@@ -55,7 +55,7 @@ gulp.task('serve', ['watch'], function(){
 			proxy: 'localhost:' + port,
 			port: 3000,
 			browser: 'chrome',
-			files: ['./src/client/**/*.*'],
+			files: [config.client + '**/*.*'],
 			ghostMode: {
 				clicks: true,
 				locations: false,

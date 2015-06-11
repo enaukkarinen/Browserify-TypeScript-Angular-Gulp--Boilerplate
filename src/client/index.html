@@ -15,11 +15,9 @@
     </head>
     <body id="page-top" class="index" ng-app="app">
         
-        <div opt-nav-bar></div>
+        <div opt-nav-bar></div>        
         
-        <div ng-include="'features/welcome/Welcome.html'"></div>
-        
-        <ng-view />
+        <div ui-view ng-class="transition"></div>
             
         <script src="lib.js"></script>
         <script src="main.js"></script>

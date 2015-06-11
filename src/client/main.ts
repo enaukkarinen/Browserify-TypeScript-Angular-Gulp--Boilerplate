@@ -8,10 +8,26 @@ import "./features/common/NavBarModule";
 import Person from "./features/Person";
 var p = new Person("ensio");
 
-angular.module("app", ["NavBarModule"]).filter("greet", function() {
- return function(name: string) {
-    return "Hello, " + name + "!";
-  };
-});
+angular.module("app", [
+  "NavBarModule",
+  "ui.router"])
+ .config(function($stateProvider, $urlRouterProvider)
+	{
+    $urlRouterProvider.otherwise("welcome");
+		$stateProvider
+			.state("welcome", {
+				name: "welcome",
+				url: "/welcome",
+      	templateUrl: "./features/welcome/Welcome.html"
+			})
+			.state("players", {
+				name: "players",
+				url: "/players",
+            	templateUrl: "./app/players/PlayersGrid.html",
+				controller: "PlayersController",
+				controllerAs: "pl"
+			});
+		
+	})
 
 p.dance();

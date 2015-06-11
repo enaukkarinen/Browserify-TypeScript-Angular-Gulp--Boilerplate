@@ -12,7 +12,7 @@ var plumber       = require('gulp-plumber');
 gulp.task('less', function () {
   
   return gulp
-    .src(config.less)
+    .src(config.styles.less)
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(less())
@@ -20,5 +20,4 @@ gulp.task('less', function () {
     .pipe(concat('styles.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.dist));
-
 });

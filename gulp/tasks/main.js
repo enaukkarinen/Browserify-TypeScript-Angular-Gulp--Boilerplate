@@ -18,7 +18,7 @@ var config = require('../config.js')();
 // builds either minified or non-minified main app bundle in dist/.
 gulp.task('main', ['tslint'],  function() {
 	return browserify({debug: true})
-    .add(config.client + 'main.ts')
+    .add(config.scripts.src)
     .plugin(tsify)
     .bundle()
     .pipe(gulpif(!argv.min, exorcist('./dist/main.js.map')))  
@@ -26,6 +26,6 @@ gulp.task('main', ['tslint'],  function() {
     .pipe(gulpif(argv.min, buffer())) 
     .pipe(gulpif(argv.min, uglify()))
     .pipe(gulpif(argv.min, rename({suffix: '.min'})))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest(config.dist));
 });
 
