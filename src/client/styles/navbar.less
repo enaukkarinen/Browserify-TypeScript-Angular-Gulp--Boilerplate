@@ -19,15 +19,20 @@
 	}
 }
 
+.navbar-default .navbar-nav > li > a {
+  color: @primary-color;
+}
+
 .navbar-default,
 .navbar-inverse {
-    background-color: @primary-background;
+    
+	background: fade(@primary-background, 90%);
 	border-bottom: @primary-border;
 }
 
 @media(min-width:768px) {
     .navbar-fixed-top {
-        padding: 25px 0;
+        padding: 5px 0;
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
