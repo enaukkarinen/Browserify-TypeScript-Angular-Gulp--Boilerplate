@@ -2,8 +2,10 @@
 "use strict";
 
 export default class NavBarCtrl {
+	
 	message :string = "Some Message";
-	constructor() {
+	
+	constructor () {
 	}
 }
 

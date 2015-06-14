@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <h3>{{modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body">
+	<label>Name: <input type="text" ng-model="modalOptions.player.name"></label><br>
+	<label>Age: <input type="number" ng-model="modalOptions.player.age"></label><br>
+	<label>Position: <input type="text" ng-model="modalOptions.player.position"></label><br>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn" data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
+  <button class="btn btn-primary" data-ng-click="modalOptions.ok(modalOptions.player);">{{modalOptions.actionButtonText}}</button>
+</div>

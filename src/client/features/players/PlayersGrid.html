@@ -1,0 +1,32 @@
+<div class="container tab tab4"> 
+  <div class="row">
+  <table class="table">
+    <caption>These players</caption>
+    <thead>
+      <tr>
+         <th>Name</th>
+         <th>Age</th>
+         <th>Position</th>
+         <th></th>
+         <th></th>
+         <th><a href="#" ng-click="pl.create()">Add</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in pl.players">
+         <td style="cursor: pointer;"><a ui-sref="player({ player: p })">{{ p.name }}</a></td>
+         <td>{{p.age}}</td>
+         <td>{{p.position}}</td>
+         <td> <button class="btn btn-default dropdown-toggle" type="button" ng-click="pl.edit(p)">Edit</button></td>
+         <td> <button class="btn btn-default dropdown-toggle" type="button" ng-click="pl.delete(p)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  
+
+  <div class="footer">
+
+  </div>
+
+</div>
