@@ -20,6 +20,8 @@ module.exports = function() {
       // app js bundle
       src: client + 'main.ts',
       
+      watch: ["./js/**/*.ts", "!./js/vendor/*.ts"],
+      
       // vendor js bundle
       vendor: [
       './bower_components/jquery/dist/jquery.js',
@@ -31,6 +33,18 @@ module.exports = function() {
       './bower_components/bootstrap/dist/js/bootstrap.js'
       ]
     },
+    
+    htmlTemplates: client + 'features/**/*.html',
+    
+    templateCache: {
+      file: 'templates.js',
+      options: {
+        module: 'app.templates',
+        standalone: true,
+        root: './features/'
+      }
+    },
+       
     
     //styles
     styles: {

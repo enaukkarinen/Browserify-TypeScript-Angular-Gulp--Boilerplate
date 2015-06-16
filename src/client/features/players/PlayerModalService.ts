@@ -33,26 +33,24 @@ export class PlayerModalService {
             backdrop: true,
             keyboard: true,
             modalFade: true,
-            templateUrl: "/features/players/PlayerDelete.html"
+            templateUrl: "features/players/PlayerDelete.html"
         };
         
-        
-    
     private modalOptions : ModalOptions;
         
     public showModal (args) {
             switch (args.action) {
                 case "edit":
                 this.modalOptions = new ModalOptions("Edit player", "Cancel", "Edit", args.player);
-                this.modalDefaults.templateUrl = "/features/players/PlayerEdit.html";
+                this.modalDefaults.templateUrl = "features/players/PlayerEdit.html";
                 break;
                 case "delete":
                 this.modalOptions = new ModalOptions("Delete player", "Cancel", "Delete", args.player);
-                this.modalDefaults.templateUrl = "/features/players/PlayerDelete.html";
+                this.modalDefaults.templateUrl = "features/players/PlayerDelete.html";
                 break;
                 case "create":
                 this.modalOptions = new ModalOptions("Create player", "Cancel", "Create", args.player);
-                this.modalDefaults.templateUrl = "/features/players/PlayerCreate.html";
+                this.modalDefaults.templateUrl = "features/players/PlayerCreate.html";
                 break;
                 default:
                 break;            

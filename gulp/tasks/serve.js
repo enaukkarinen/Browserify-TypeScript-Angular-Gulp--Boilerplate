@@ -62,10 +62,10 @@ gulp.task('serve', ['build', 'watch'], function(){
 				forms: true,
 				scrolls: true      
 			},
-			injectChanges: false, // ?
+			injectChanges: true, // ?
 			logFileChanges: true,
-			logLevel: 'debug',
-			logPrefix: 'gulp-patterns',
+			logLevel: 'info',
+			logPrefix: 'BROWSER-SYNC: ',
 			notify: true,
 			reloadDelay: 1000
 			};

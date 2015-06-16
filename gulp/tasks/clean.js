@@ -24,3 +24,8 @@ gulp.task('clean-styles', function () {
 	del(config.dist + '**.*.css');
 	gutil.log(gutil.colors.red('deleted all css from dist.'));	
 });
+
+gulp.task('clean-templates', function () {
+	del(config.client + 'templates.js');
+	gutil.log(gutil.colors.red('deleted templates.js'));	
+});

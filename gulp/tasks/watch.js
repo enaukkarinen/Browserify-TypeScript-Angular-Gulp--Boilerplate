@@ -8,7 +8,7 @@ gulp.task('watch', ['ts-watch', 'less-watch', 'html-watch', 'image-watch'], func
 });
 
 gulp.task("ts-watch", function() {
-    gulp.watch(config.client + '**/*.ts', ['main']);
+    gulp.watch(config.scripts.watch, ['main']);
 });
 
 gulp.task("html-watch", function() {
