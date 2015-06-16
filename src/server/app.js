@@ -30,7 +30,7 @@ app.all('/*', function(req, res) {
 var s = http.createServer(app);
 s.on('error', function(err){
 if(err.code === 'EADDRINUSE'){
-  gutil.log('Development server is already started at port ' + port);
+  gutil.log('server is already started at port ' + port);
 }
 else {
   throw err;
