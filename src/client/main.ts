@@ -14,7 +14,7 @@ angular.module("app", [
   "PlayersModule",
   "ui.router",
   "ui.bootstrap"])
- .config(function($stateProvider, $urlRouterProvider) {
+ .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("welcome");
 	$stateProvider
 		.state("welcome", {
@@ -37,6 +37,6 @@ angular.module("app", [
 				controllerAs: "pld",
 				params: {player: null}
 		});		
-});
+}]);
 
 

@@ -24,8 +24,8 @@ gulp.task('vendor-js', function () {
   return gulp.src(config.scripts.vendor)
   .pipe(gulpif(!argv.min, sourcemaps.init()))
   .pipe(concat({ path:'lib.js'}))
-  .pipe(gulpif(argv.min, uglify()))
-  .pipe(gulpif(argv.min, rename({suffix:'.min'})))
+  .pipe(gulpif(argv.min, uglify({mangle: false})))
+  //.pipe(gulpif(argv.min, rename({suffix:'.min'})))
   .pipe(gulpif(!argv.min, sourcemaps.write('.'))) 
   .pipe(gulp.dest('./dist'));
 });
@@ -40,8 +40,6 @@ gulp.task('vendor-css', function () {
   return gulp.src(config.styles.vendor)
   .pipe(gulpif(!argv.min, sourcemaps.init()))
   .pipe(concat({ path:'lib.css'}))
-  .pipe(gulpif(argv.min, uglify()))
-  .pipe(gulpif(argv.min, rename({suffix:'.min'})))
   .pipe(gulpif(!argv.min, sourcemaps.write('.'))) 
   .pipe(gulp.dest('./dist'));
 });

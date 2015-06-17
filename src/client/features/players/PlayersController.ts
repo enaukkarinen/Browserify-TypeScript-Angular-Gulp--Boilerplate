@@ -10,7 +10,7 @@ export default class PlayersCtrl {
 	
 	public players: Player[];
 	
-	static $inject = ['PlayerModalService'];
+	static $inject = ["PlayerModalService"];
 
 	constructor(private ModalService : PlayerModalService) {
 		this.players = new Array<Player>();

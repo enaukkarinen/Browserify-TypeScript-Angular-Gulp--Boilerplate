@@ -8,7 +8,7 @@ class ModalOptions {
      public actionButtonText: string;
      public player: Player;
      
-     constructor(header: string, close: string, action: string, player: Player){
+     constructor(header: string, close: string, action: string, player: Player) {
          this.headerText = header;
          this.closeButtonText = close;
          this.actionButtonText = action;
@@ -63,7 +63,6 @@ export class PlayerModalService {
         
         var tempModalDefaults = {controller: function(x, y) {}};
         var tempModalOptions = {};
-        tempModalDefaults;
         //Map angular-ui modal custom defaults to modal defaults defined in service
         angular.extend(tempModalDefaults, this.modalDefaults, customModalDefaults);
 
@@ -78,9 +77,9 @@ export class PlayerModalService {
                     $modalInstance.close(result);
                 };
                 $scope.modalOptions.close = function (result) {
-                    $modalInstance.dismiss('cancel');
+                    $modalInstance.dismiss("cancel");
                 };
-            }
+            };
         }
         return this.$modal.open(tempModalDefaults).result;
     };

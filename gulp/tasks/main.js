@@ -25,7 +25,6 @@ gulp.task('main', ['templates', 'tslint'],  function() {
     .pipe(source('main.js'))
     .pipe(gulpif(argv.min, buffer())) 
     .pipe(gulpif(argv.min, uglify()))
-    .pipe(gulpif(argv.min, rename({suffix: '.min'})))
+    //.pipe(gulpif(argv.min, rename({suffix: '.min'})))
     .pipe(gulp.dest(config.dist));
 });
-
