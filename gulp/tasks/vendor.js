@@ -8,7 +8,7 @@ var gulpif        = require('gulp-if');
 var uglify        = require('gulp-uglify');
 var rename        = require('gulp-rename');
 var sourcemaps    = require('gulp-sourcemaps');
-
+var minifyCss     = require('gulp-minify-css');
 var config        = require('../config.js')();
 
 // builds either minified or non-minified dependency bundles to dist/.
@@ -39,6 +39,7 @@ gulp.task('vendor-css', function () {
   
   return gulp.src(config.styles.vendor)
   .pipe(gulpif(!argv.min, sourcemaps.init()))
+  .pipe(minifyCss({compatibility: 'ie8'}))
   .pipe(concat({ path:'lib.css'}))
   .pipe(gulpif(!argv.min, sourcemaps.write('.'))) 
   .pipe(gulp.dest('./dist'));

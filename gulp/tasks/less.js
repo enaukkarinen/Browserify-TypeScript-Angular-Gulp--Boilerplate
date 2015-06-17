@@ -8,7 +8,7 @@ var autoprefixer  = require('gulp-autoprefixer');
 var config 		    = require('../config.js')();
 var concat        = require('gulp-concat');
 var plumber       = require('gulp-plumber');
-
+var minifyCss     = require('gulp-minify-css');
 gulp.task('less', function () {
   
   return gulp
@@ -16,7 +16,8 @@ gulp.task('less', function () {
     .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(less())
-    .pipe(autoprefixer({ map: true })) 
+    .pipe(autoprefixer({ map: true }))
+    .pipe(minifyCss()) 
     .pipe(concat('styles.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.dist));

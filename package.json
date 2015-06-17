@@ -34,6 +34,7 @@
     "gulp-less": "^3.0.3",
     "gulp-linker": "^0.1.7",
     "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.1.6",
     "gulp-minify-html": "^1.0.3",
     "gulp-nodemon": "^2.0.3",
     "gulp-plumber": "^1.0.1",
