@@ -4,11 +4,12 @@ import Player from  "../Player";
 import { IModalDialogParameters, ModalDialogParameters } from "./ModalDialogParameters";
 import PlayerModalCtrl from "./PlayerModalController";
 
-export default class PlayerModalProvider {
+export default class PlayerModalService {
     
     static $inject = ["$modal"];
     
-    constructor (private $modal) {    
+    constructor (private $modal) {
+        
     }
     
     private getTemplate(action: string): string {
@@ -24,7 +25,7 @@ export default class PlayerModalProvider {
         }
     }
     
-    openDialog (params: ModalDialogParameters): angular.ui.bootstrap.IModalServiceInstance { 
+    openDialog (params: ModalDialogParameters) { 
         
         var options: angular.ui.bootstrap.IModalSettings = {
             backdrop: 'static',
@@ -40,6 +41,6 @@ export default class PlayerModalProvider {
         return this.$modal.open(options).result;
     }
 }
-console.log("modalprovider");
-angular.module("PlayersModule").service("PlayerModalProvider", PlayerModalProvider);
+
+angular.module("PlayersModule").service("PlayerModalService", PlayerModalService);
 

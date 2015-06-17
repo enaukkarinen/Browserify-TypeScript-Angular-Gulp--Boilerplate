@@ -6,7 +6,7 @@ var m = angular.module("PlayersModule", []);
 console.log("PlayersModule");
 
 
-import "./modalDialog/PlayerModalProvider";
+import "./modalDialog/PlayerModalService";
 import "./modalDialog/PlayerModalController";
 import "./PlayerController";
 import "./PlayersController";
