@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "lodash/lodash.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-sanitize.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-cookies.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angularjs/legacy/angular-scenario-1.2.d.ts": {
+      "commit": "002a9a96b116bd3f9053ee1afa02c03636ffebb5"
+    },
+    "angular-ui-bootstrap/angular-ui-bootstrap.d.ts": {
+      "commit": "faff1866df10486a4c50904236183edc62ca841e"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "faff1866df10486a4c50904236183edc62ca841e"
+    }
+  }
+}

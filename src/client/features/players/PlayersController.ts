@@ -1,18 +1,18 @@
-/// <reference path="../../../../typings/angularjs/angular.d.ts" />
-/// <reference path="../../../../typings/lodash/lodash.d.ts"/>
+/// <reference path="../../../../typings/tsd.d.ts" />
 "use strict";
 
 
 import Player from "./Player";
-import PlayerModalService from "./PlayerModalService";
+import PlayerModalProvider from "./modalDialog/PlayerModalProvider";
+import { ModalDialogParameters } from "./modalDialog/ModalDialogParameters";
 
 export default class PlayersCtrl {
 	
 	public players: Player[];
 	
-	static $inject = ["PlayerModalService"];
+	static $inject = ["PlayerModalProvider"];
 
-	constructor(private ModalService : PlayerModalService) {
+	constructor(private modal : PlayerModalProvider) {
 		this.players = new Array<Player>();
 		this.players.push(new Player(1, "Karl Anthony Towns", 18, "C"));
 		this.players.push(new Player(2, "Jahlil Okafor", 19, "C"));
@@ -24,7 +24,7 @@ export default class PlayersCtrl {
 	
 	public create () {
 		var temp = this.players;
-		 this.ModalService.showModal({action: "create", player: {id: this.players.length+1, name: "", age: 18, position: ""}}).then(function (created) { 
+		 this.modal.openDialog(new ModalDialogParameters("create", new Player(this.players.length+1, "", 18, ""))).then(function (created) { 
 			temp.push(created);
 		});
 		this.players = temp;
@@ -32,7 +32,7 @@ export default class PlayersCtrl {
 	
 	public edit (player) {
 		var temp = this.players;
-		 this.ModalService.showModal({action: "edit", player: angular.extend({}, player)}).then(function (edited) { 
+		 this.modal.openDialog(new ModalDialogParameters("edit", angular.extend({}, player))).then(function (edited) { 
 			var index = _.indexOf(temp, _.find(temp, {id: player.id}));
 			temp.splice(index, 1, edited);
 		});
@@ -42,7 +42,7 @@ export default class PlayersCtrl {
 	
 	public delete (player) {
 		var temp = this.players;
-        this.ModalService.showModal({action: "delete", player: player}).then(function (result) { 
+        this.modal.openDialog(new ModalDialogParameters("delete", player)).then(function (result) { 
 			_.remove(temp, function(obj) { return obj.id === player.id; }); 
 		});
 		this.players = temp;						

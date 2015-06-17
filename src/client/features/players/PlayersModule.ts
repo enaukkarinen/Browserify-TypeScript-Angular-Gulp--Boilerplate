@@ -1,13 +1,16 @@
-/// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 "use strict";
 
 
 var m = angular.module("PlayersModule", []);
 console.log("PlayersModule");
 
+
+import "./modalDialog/PlayerModalProvider";
+import "./modalDialog/PlayerModalController";
 import "./PlayerController";
 import "./PlayersController";
-import "./PlayerModalService";
+
 
 
 export default m;

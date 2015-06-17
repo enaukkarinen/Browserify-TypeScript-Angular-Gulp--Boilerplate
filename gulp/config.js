@@ -20,7 +20,7 @@ module.exports = function() {
       // app js bundle
       src: client + 'main.ts',
       
-      watch: ["./js/**/*.ts", "!./js/vendor/*.ts"],
+      watch: ["./src/**/*.ts", "!./src/client/vendor/*.ts"],
       
       // vendor js bundle
       vendor: [
@@ -69,7 +69,8 @@ module.exports = function() {
         './bower_components/font-awesome/fonts/fontawesome-webfont.eot',
         './bower_components/font-awesome/fonts/fontawesome-webfont.svg',
         './bower_components/font-awesome/fonts/fontawesome-webfont.ttf',
-        './bower_components/font-awesome/fonts/fontawesome-webfont.woff'
+        './bower_components/font-awesome/fonts/fontawesome-webfont.woff',
+        './bower_components/font-awesome/fonts/fontawesome-webfont.woff2'
       ],
       dest: dist + 'fonts/'     
     }

@@ -1,21 +1,21 @@
-/// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 
-class Nav {
-	
-	constructor() {}
-	
-	
+
+class NavBarDirective implements angular.IDirective {
+    
+    restrict = 'EA';
+    templateUrl = "features/common/NavBar.html";
+    controller = function() {};
+    controllerAs =  "nav";
+
+    constructor() {
+    }
+
+    static factory(): angular.IDirectiveFactory {
+        const directive = () => new NavBarDirective();
+        //directive.$inject = ['$location', 'toaster'];
+        return directive;
+    }
 }
 
-export function NavBarDirective () : ng.IDirective {
-	
-	console.log("build directive");
-	return {
-		templateUrl: "features/common/NavBar.html",
-        controller: Nav,
-        controllerAs: "nav",
-		bindToController: true
-	};
-}
-
-angular.module("NavBarModule").directive("optNavBar", NavBarDirective);
+angular.module("NavBarModule").directive("optNavBar", NavBarDirective.factory());
