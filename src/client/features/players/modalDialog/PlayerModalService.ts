@@ -8,7 +8,7 @@ export default class PlayerModalService {
     
     static $inject = ["$modal"];
     
-    constructor (private $modal) {
+    constructor (private $modal: angular.ui.bootstrap.IModalService) {
         
     }
     
@@ -25,7 +25,7 @@ export default class PlayerModalService {
         }
     }
     
-    openDialog (params: ModalDialogParameters) { 
+    openDialog (params: ModalDialogParameters): angular.IPromise<any> { 
         
         var options: angular.ui.bootstrap.IModalSettings = {
             backdrop: 'static',
