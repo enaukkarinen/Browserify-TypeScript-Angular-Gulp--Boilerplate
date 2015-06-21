@@ -17,7 +17,7 @@ export default class PlayerModalService {
             case "create":
             return "features/players/modalDialog/PlayerCreate.html";
             case "edit":
-            return "features/players/modalDialog/PlayerCreate.html";
+            return "features/players/modalDialog/PlayerEdit.html";
             case "delete":
             return "features/players/modalDialog/PlayerDelete.html";
             default:
@@ -31,7 +31,8 @@ export default class PlayerModalService {
             backdrop: 'static',
             templateUrl: this.getTemplate(params.action),
             controller: PlayerModalCtrl,
-            size: 'sm',
+            controllerAs: "md",
+            //size: 'sm',
             resolve: {
                 dialogParams: function (): ModalDialogParameters {
                     return params;

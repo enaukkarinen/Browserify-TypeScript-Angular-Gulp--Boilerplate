@@ -23,29 +23,25 @@ export default class PlayersCtrl {
 
 	
 	public create () {
-		var temp = this.players;
-		 this.PlayerModalService.openDialog(new ModalDialogParameters("create", new Player(this.players.length+1, "", 18, ""))).then(function (created) { 
-			temp.push(created);
+		var prms = new ModalDialogParameters("create", new Player(this.players.length+1, "", 18, ""));
+		 this.PlayerModalService.openDialog(prms).then((created) => { 
+			this.players.push(created);
 		});
-		this.players = temp;
 	};
 	
 	public edit (player) {
-		var temp = this.players;
-		 this.PlayerModalService.openDialog(new ModalDialogParameters("edit", angular.extend({}, player))).then(function (edited) { 
-			var index = _.indexOf(temp, _.find(temp, {id: player.id}));
-			temp.splice(index, 1, edited);
+		var prms = new ModalDialogParameters("edit", angular.extend({}, player));
+		this.PlayerModalService.openDialog(prms).then((edited) => { 
+			var index = _.indexOf(this.players, _.find(this.players, {id: player.id}));
+			this.players.splice(index, 1, edited);
 		});
-		this.players = temp;
-		
 	};
 	
 	public delete (player) {
-		var temp = this.players;
-        this.PlayerModalService.openDialog(new ModalDialogParameters("delete", player)).then(function (result) { 
-			_.remove(temp, function(obj) { return obj.id === player.id; }); 
-		});
-		this.players = temp;						
+		var prms = new ModalDialogParameters("delete", player);
+        this.PlayerModalService.openDialog(prms).then((deleted) => { 
+			_.remove(this.players, function(obj) { return obj.id === deleted.id; }); 
+		});						
 	};
 }
 

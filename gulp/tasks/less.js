@@ -20,5 +20,5 @@ gulp.task('less', function () {
     .pipe(minifyCss()) 
     .pipe(concat('styles.css'))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.dist));
+    .pipe(gulp.dest(config.build));
 });

@@ -11,7 +11,7 @@ var sourcemaps    = require('gulp-sourcemaps');
 var minifyCss     = require('gulp-minify-css');
 var config        = require('../config.js')();
 
-// builds either minified or non-minified dependency bundles to dist/.
+// builds either minified or non-minified dependency bundles to build/.
 gulp.task('vendor', ['vendor-js', 'vendor-css']);
 
 gulp.task('vendor-js', function () {
@@ -27,7 +27,7 @@ gulp.task('vendor-js', function () {
   .pipe(gulpif(argv.min, uglify({mangle: false})))
   //.pipe(gulpif(argv.min, rename({suffix:'.min'})))
   .pipe(gulpif(!argv.min, sourcemaps.write('.'))) 
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest(config.build));
 });
 
 gulp.task('vendor-css', function () {
@@ -42,5 +42,5 @@ gulp.task('vendor-css', function () {
   .pipe(minifyCss({compatibility: 'ie8'}))
   .pipe(concat({ path:'lib.css'}))
   .pipe(gulpif(!argv.min, sourcemaps.write('.'))) 
-  .pipe(gulp.dest('./dist'));
+  .pipe(gulp.dest(config.build));
 });

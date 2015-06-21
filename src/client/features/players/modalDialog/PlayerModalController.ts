@@ -10,10 +10,20 @@ export default class PlayerModalCtrl {
 	player :Player;
 	
 	
-    static $inject = ["$stateParams", "dialogParams"];
+    static $inject = ["$modalInstance", "dialogParams"];
 
-    constructor(private $stateParams, private dialogParams : IModalDialogParameters) {
-		console.log(dialogParams);
+    constructor(private $modalInstance, private dialogParams : IModalDialogParameters) {
+		this.player = dialogParams.player;
+	}
+	
+	proceed () {
+		console.log(this.$modalInstance);
+		
+		this.$modalInstance.close(this.player);
+	}
+	
+	cancel () {
+		this.$modalInstance.dismiss();
 	}
 }
 

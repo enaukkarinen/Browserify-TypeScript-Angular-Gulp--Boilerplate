@@ -1,10 +1,10 @@
 <div class="modal-header">
-  <h3>{{modalOptions.headerText}}</h3>
+  <h3>Delete player</h3>
 </div>
 <div class="modal-body">
-  <p>Are you sure you want to delete {{modalOptions.player.name}}?</p>
+  <p>Are you sure you want to delete  {{md.player.name}}?</p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn" data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
-  <button class="btn btn-primary" data-ng-click="modalOptions.ok();">{{modalOptions.actionButtonText}}</button>
+  <button type="button" class="btn" data-ng-click="md.cancel()">Cancel</button>
+  <button class="btn btn-primary" data-ng-click="md.proceed()">Delete</button>
 </div>

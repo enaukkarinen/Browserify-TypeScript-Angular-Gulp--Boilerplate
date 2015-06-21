@@ -2,13 +2,13 @@
 module.exports = function() {
   
   var client = './src/client/',
-  dist = './dist/';
+  build = './build/';
   
   return {
     
     // paths
     client: client,
-    dist: dist,
+    build: build,
     
     // node settings
     server: './src/server/',
@@ -58,7 +58,7 @@ module.exports = function() {
     // images
     images: {
       src: client + 'assets/images/**/*.*',
-      dest: dist + 'images/'
+      dest: build + 'images/'
     },
     
     //fonts
@@ -72,7 +72,7 @@ module.exports = function() {
         './bower_components/font-awesome/fonts/fontawesome-webfont.woff',
         './bower_components/font-awesome/fonts/fontawesome-webfont.woff2'
       ],
-      dest: dist + 'fonts/'     
+      dest: build + 'fonts/'     
     }
     
   };

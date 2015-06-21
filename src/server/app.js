@@ -15,7 +15,7 @@ var app = express();
 
 // log all requests to the console
 app.use(logger('dev'));
-app.use(express.static('./dist/'));
+app.use(express.static('./build/'));
 
 console.log('About to crank up node!');
 console.log('PORT=' + port);
@@ -23,7 +23,7 @@ console.log('NODE_ENV=' + environment);
 
 // Serve index.html for all routes to leave routing up to Angular
 app.all('/*', function(req, res) {
-  res.sendFile('index.html', {root:'dist'});
+  res.sendFile('index.html', {root:'build'});
 });
 
 // Start webserver if not already running

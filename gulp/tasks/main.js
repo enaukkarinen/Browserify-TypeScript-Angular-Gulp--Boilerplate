@@ -21,10 +21,10 @@ gulp.task('main', ['templates'],  function() { // , 'tslint' == shit!
     .add(config.scripts.src)
     .plugin(tsify)
     .bundle()
-    .pipe(gulpif(!argv.min, exorcist('./dist/main.js.map')))  
+    .pipe(gulpif(!argv.min, exorcist(config.build + 'main.js.map')))  
     .pipe(source('main.js'))
     .pipe(gulpif(argv.min, buffer())) 
     .pipe(gulpif(argv.min, uglify()))
     //.pipe(gulpif(argv.min, rename({suffix: '.min'})))
-    .pipe(gulp.dest(config.dist));
+    .pipe(gulp.dest(config.build));
 });

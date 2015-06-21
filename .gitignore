@@ -1,5 +1,5 @@
 
-/dist/
+/build/
 /src/client/templates.*
 node_modules
 

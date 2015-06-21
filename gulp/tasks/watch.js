@@ -12,7 +12,7 @@ gulp.task("ts-watch", function() {
 });
 
 gulp.task("html-watch", function() {
-    gulp.watch(config.client + '**/*.html', ['views', 'templates']);
+    gulp.watch(config.client + '**/*.html', ['templates']);
 });
 
 gulp.task('less-watch', function () {

@@ -6,26 +6,27 @@ var gutil = require('gulp-util');
 
 
 gulp.task('clean', function () {
-	del(config.dist);
-	gutil.log(gutil.colors.red('deleted dist folder.'));
+	del(config.build);
+	gutil.log(gutil.colors.red('deleted build folder.'));
 });
 
 gulp.task('clean-js', function () {
-	del(config.dist + '**.*.js');
-	gutil.log(gutil.colors.red('deleted all js from dist.'));
+	del(config.build + '**.*.js');
+	del(config.build + '**.*.js.map');
+	gutil.log(gutil.colors.red('deleted javascript & source-maps from build folder.'));
 });
 
 gulp.task('clean-assets', function () {	
-	del(config.dist + 'assets/');
+	del(config.build + 'assets/');
 	gutil.log(gutil.colors.red('deleted all assets from dist.'));	
 });
 
 gulp.task('clean-styles', function () {
-	del(config.dist + '**.*.css');
+	del(config.build + '**.*.css');
 	gutil.log(gutil.colors.red('deleted all css from dist.'));	
 });
 
 gulp.task('clean-templates', function () {
-	del(config.client + 'templates.js');
-	gutil.log(gutil.colors.red('deleted templates.js'));	
+	del(config.client + 'templates.ts');
+	gutil.log(gutil.colors.red('deleted templates.ts'));	
 });

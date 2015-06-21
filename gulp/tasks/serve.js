@@ -7,8 +7,10 @@ var gutil = require('gulp-util');
 var browserSync = require('browser-sync');
 var args = require('yargs').argv;
 
-gulp.task('serve', ['build', 'watch'], function(){
-
+gulp.task('serve', ['build'], function(){
+	
+	gulp.run('watch');
+	
 	var isDev = true;
 	var port = process.env.PORT || config.defaultport;
 	var nodeOptions = {
@@ -55,7 +57,7 @@ gulp.task('serve', ['build', 'watch'], function(){
 			proxy: 'localhost:' + port,
 			port: 3000,
 			browser: 'chrome',
-			files: [config.client + '**/*.*'],
+			files: [config.client + '**/*.*', , "!./src/client/vendor/*.ts"],
 			ghostMode: {
 				clicks: true,
 				locations: false,

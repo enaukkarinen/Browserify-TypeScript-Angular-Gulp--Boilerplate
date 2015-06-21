@@ -7,6 +7,10 @@ var rename          = require("gulp-rename");
 
 
 gulp.task('templates', ['clean-templates'], function () {
+    
+    gulp.src(config.client + 'index.html')
+    .pipe(gulp.dest(config.build));
+    
     return gulp
     .src(config.htmlTemplates)
     .pipe(minifyHtml({empty: true}))
@@ -15,6 +19,6 @@ gulp.task('templates', ['clean-templates'], function () {
     	config.templateCache.options
 	))
     .pipe(rename({ extname: '.ts'}))
-    .pipe(gulp.dest('./src/client/'));
-        
+    .pipe(gulp.dest(config.client));
+    
 });
