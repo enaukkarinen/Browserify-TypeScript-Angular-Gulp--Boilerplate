@@ -9,6 +9,7 @@ console.log("PlayersModule");
 import "./modalDialog/PlayerModalService";
 import "./modalDialog/PlayerModalController";
 import "./PlayerController";
+import "./PlayerService";
 import "./PlayersController";
 
 
