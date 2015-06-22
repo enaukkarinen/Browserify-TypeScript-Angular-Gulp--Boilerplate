@@ -1,8 +1,9 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
    
 import Player from  "./Player";
+import { IPlayerService } from "./IPlayerService";
 
-export default class PlayerService {
+export default class PlayerService implements IPlayerService {
     
 	private _players: Array<Player>;
 	
@@ -16,28 +17,27 @@ export default class PlayerService {
 		];
 	}
 	
-	getAll (): Array<Player> {
-		return this._players;
+	get (): Array<Player>;
+	get (id :number): Player;
+	get (id? :number): any {
+		if(typeof id === "number")
+			return _.find(this._players, (player) => { return player.id === id; });
+		else
+			return this._players;
 	}
 	
-	getPlayer (id: number): Player {
-		 return _.find(this._players, (player) => {
-			return player.id === id;
-		});
-	}
-	
-	addPlayer (player: Player): void {
+	add (player: Player): void {
 		this._players.push(player);
 	} 
 	
-	deletePlayer (id: number): void {
+	delete (id: number): void {
 		_.remove(this._players, (player) => {
 			return player.id === id
 		});
 		console.log(this._players);
 	}
 	
-	updatePlayer (player: Player): void {
+	update (player: Player): void {
 		let index = _.indexOf(this._players, _.find(this._players, {id: player.id}));
 		this._players.splice(index, 1, player);
 	}
