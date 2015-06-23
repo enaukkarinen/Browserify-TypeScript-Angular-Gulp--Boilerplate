@@ -1,5 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
+import NavBarController from "./NavBarController";
 
 interface NavBarIsolatedScope extends angular.IScope
 {
@@ -10,15 +11,16 @@ interface NavBarIsolatedScope extends angular.IScope
 
 export class NavBarDirective implements angular.IDirective {
     
-    restrict = 'EA';
-    templateUrl = "features/common/NavBar.html";
-    controller = () => {};
-    controllerAs =  "nav";
-    scope = { title:  "@" };
-    link: (scope: angular.IScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes) => void;
+    public restrict = 'EA';
+    public templateUrl = "features/common/NavBar.html";
+    public controller = NavBarController;
+    public controllerAs =  "nav";
+    public scope = { title:  "@" };
+    public link: (scope: angular.IScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes) => void;
 
     constructor()
     {
+        //this.controller = () => {}; definition and injection here unless using another class.
         this.link = (scope: NavBarIsolatedScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes) =>
         {
             scope.name = 'Enska!';
