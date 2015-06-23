@@ -20,7 +20,7 @@ export default class PlayersCtrl {
 	}
 	
 	public create () {
-		var prms = new ModalDialogParameters("create", new Player(this.players.length+1, "", 18, ""));
+		var prms = new ModalDialogParameters("create", new Player(this.players.length + 1, "", 18, ""));
 		 this.PlayerModalService.openDialog(prms).then((created) => { 
 			this.PlayerService.add(created);
 		});

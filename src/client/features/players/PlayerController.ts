@@ -11,10 +11,7 @@ export default class PlayerCtrl {
     static $inject = ["$stateParams"];
 
     constructor(private $stateParams) {
-		
-			var vm = this;
-	
-			vm.player = $stateParams.player;
+		this.player = this.$stateParams.player;
 	}
 }
 

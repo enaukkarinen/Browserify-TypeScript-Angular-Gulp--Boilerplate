@@ -1,7 +1,20 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
    
 import Player from  "./Player";
-import { IPlayerService } from "./IPlayerService";
+
+interface IPlayerService {
+	
+    get(s: number): Player;
+	
+    get(): Player[];
+	
+	add (player: Player): void;
+	
+	delete (id: number): void;
+	
+	update (player: Player): void;
+	
+}
 
 export default class PlayerService implements IPlayerService {
     
@@ -34,7 +47,6 @@ export default class PlayerService implements IPlayerService {
 		_.remove(this._players, (player) => {
 			return player.id === id
 		});
-		console.log(this._players);
 	}
 	
 	update (player: Player): void {
