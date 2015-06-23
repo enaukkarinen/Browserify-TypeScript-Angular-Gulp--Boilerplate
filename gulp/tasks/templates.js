@@ -6,7 +6,7 @@ var config 			= require('../config.js')();
 var rename          = require("gulp-rename");
 
 
-gulp.task('templates', ['clean-templates'], function () {
+gulp.task('templates', function () { //, ['clean-templates']
     
     gulp.src(config.client + 'index.html')
     .pipe(gulp.dest(config.build));

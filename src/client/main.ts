@@ -36,6 +36,11 @@ angular.module("app", [
 				controller: "PlayerController",
 				controllerAs: "pld",
 				params: {player: null}
+		})
+		.state("test", {
+				name: "test",
+				url: "/test",
+            	templateUrl: "features/styleTest/StyleTest.html"
 		});		
 }]);
 

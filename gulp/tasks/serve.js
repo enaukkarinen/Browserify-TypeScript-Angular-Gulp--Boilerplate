@@ -70,7 +70,7 @@ gulp.task('serve', ['build'], function(){
 			logPrefix: 'BROWSER-SYNC: ',
 			notify: true,
 			reloadDelay: 1000
-			};
+		};
 		return browserSync(options);
 		
 	}
