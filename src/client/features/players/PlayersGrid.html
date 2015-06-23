@@ -20,7 +20,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="p in pl.players">
-         <td style="cursor: pointer;"><a ui-sref="player({ player: p })">{{ p.name }}</a></td>
+         <td style="cursor: pointer;"><a ui-sref="Player({ player: p })">{{ p.name }}</a></td>
          <td>{{p.age}}</td>
          <td>{{p.position}}</td>
          <td> <button class="btn" type="button" ng-click="pl.edit(p)">Edit</button></td>

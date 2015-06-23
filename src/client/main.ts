@@ -22,24 +22,24 @@ angular.module("app", [
 			url: "/welcome",
   			templateUrl: "features/welcome/Welcome.html"
 		})
-		.state("players", {
-			name: "players",
-			url: "/players",
+		.state("Players", {
+			name: "Players",
+			url: "/Players",
         	templateUrl: "features/players/PlayersGrid.html",
 			controller: "PlayersController",
 			controllerAs: "pl"
 		})
-		.state("player", {
-				name: "player",
-				url: "/player",
+		.state("Player", {
+				name: "Player",
+				url: "/Player",
             	templateUrl: "features/players/PlayerDetails.html",
 				controller: "PlayerController",
 				controllerAs: "pld",
 				params: {player: null}
 		})
-		.state("test", {
-				name: "test",
-				url: "/test",
+		.state("StyleTest", {
+				name: "StyleTest",
+				url: "/StyleTest",
             	templateUrl: "features/styleTest/StyleTest.html"
 		});		
 }]);
