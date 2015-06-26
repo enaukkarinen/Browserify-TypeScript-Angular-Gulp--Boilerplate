@@ -4,7 +4,7 @@ var tslint = require('gulp-tslint');
  var config = require('../config.js')();
  
 gulp.task('tslint', function(){
-      gulp.src(config.client + '**/*.ts')
+      gulp.src('./src/**/*.ts')
         .pipe(tslint())
         .pipe(tslint.report('prose', { emitError: false }));
 });

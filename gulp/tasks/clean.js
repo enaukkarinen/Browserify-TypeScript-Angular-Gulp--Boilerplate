@@ -27,6 +27,6 @@ gulp.task('clean-styles', function () {
 });
 
 gulp.task('clean-templates', function () {
-	del(config.client + 'templates.ts');
+	del('./src/templates.ts');
 	gutil.log(gutil.colors.red('deleted templates.ts'));	
 });

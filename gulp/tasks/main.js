@@ -16,7 +16,7 @@ var exorcist    = require('exorcist');
 var config = require('../config.js')();
 
 // builds either minified or non-minified main app bundle in dist/.
-gulp.task('main', ['templates'],  function() { // , 'tslint' == shit!
+gulp.task('main', ['templates'],  function() { 
 	return browserify({debug: true})
     .add(config.scripts.src)
     .plugin(tsify)

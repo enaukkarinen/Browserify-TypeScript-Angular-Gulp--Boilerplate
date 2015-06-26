@@ -1,4 +1,4 @@
-/// <reference path="../../../../../typings/tsd.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
    
 import Player from  "../Player";
 import { IModalDialogParameters, ModalDialogParameters } from "./ModalDialogParameters";

@@ -20,7 +20,7 @@ gulp.task('serve', ['build'], function(){
 			'PORT': port,
 			'NODE_ENV': isDev ? 'dev' : 'build'
 		},
-		watch: [config.server]		
+		watch: [config.nodeapp]		
 	};
 	
 	return nodemon(nodeOptions)
@@ -57,7 +57,7 @@ gulp.task('serve', ['build'], function(){
 			proxy: 'localhost:' + port,
 			port: 3000,
 			browser: 'chrome',
-			files: [config.client + '**/*.*', , "!./src/client/vendor/*.ts"],
+			files: ['./src/**/*.ts'],
 			ghostMode: {
 				clicks: true,
 				locations: false,

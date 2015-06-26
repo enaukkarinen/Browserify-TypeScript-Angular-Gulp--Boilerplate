@@ -8,17 +8,17 @@ var rename          = require("gulp-rename");
 
 gulp.task('templates', function () { //, ['clean-templates']
     
-    gulp.src(config.client + 'index.html')
+    gulp.src('./src/index.html')
     .pipe(gulp.dest(config.build));
     
     return gulp
-    .src(config.htmlTemplates)
+    .src(config.templateCache.html)
     .pipe(minifyHtml({empty: true}))
     .pipe(templateCache(
     	config.templateCache.file, 
     	config.templateCache.options
 	))
     .pipe(rename({ extname: '.ts'}))
-    .pipe(gulp.dest(config.client));
+    .pipe(gulp.dest(config.templateCache.dest));
     
 });

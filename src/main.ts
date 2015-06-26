@@ -1,12 +1,8 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
 import "./features/common/NavBarModule";
 import "./features/players/PlayersModule";
-
-import Person from "./features/Person";
-var p = new Person("ensio");
-p.dance();
 
 angular.module("app", [
   "app.templates",

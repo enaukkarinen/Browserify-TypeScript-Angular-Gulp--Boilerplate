@@ -1,26 +1,24 @@
 
 module.exports = function() {
-  
-  var client = './src/client/',
-  build = './build/';
+
+  var build = './build/';
   
   return {
     
     // paths
-    client: client,
+
     build: build,
     
     // node settings
-    server: './src/server/',
-    nodeapp: './src/server/app.js',
+    nodeapp: './server.js',
     defaultport: 7203,
     
     // scripts
     scripts: {   
       // app js bundle
-      src: client + 'main.ts',
+      src: './src/main.ts',
       
-      watch: ["./src/**/*.ts", "!./src/client/vendor/*.ts"],
+      watch: ["./src/**/*.ts"],
       
       // vendor js bundle
       vendor: [
@@ -34,10 +32,10 @@ module.exports = function() {
       ]
     },
     
-    htmlTemplates: client + 'features/**/*.html',
-    
     templateCache: {
-      file: 'templates.js',
+      html: './src/features/**/*.html',
+      file: 'templates.*',
+      dest: './src/',
       options: {
         module: 'app.templates',
         standalone: true,
@@ -48,7 +46,7 @@ module.exports = function() {
     
     //styles
     styles: {
-      less: './src/client/styles/**/*.*',
+      less: './src/styles/**/*.*',
       vendor: [
         './bower_components/bootstrap/dist/css/bootstrap.css',
         './bower_components/font-awesome/css/font-awesome.css'
@@ -57,13 +55,13 @@ module.exports = function() {
     
     // images
     images: {
-      src: client + 'assets/images/**/*.*',
+      src: './src/assets/images/**/*.*',
       dest: build + 'images/'
     },
     
     //fonts
     fonts: {
-      src: client + 'assets/fonts/**/*.*',
+      src: './src/assets/fonts/**/*.*',
       vendor: [
         './bower_components/font-awesome/fonts/FontAwesome.otf',
         './bower_components/font-awesome/fonts/fontawesome-webfont.eot',
