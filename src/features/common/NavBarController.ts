@@ -15,7 +15,7 @@ export default class NavBarCtrl {
 	links: Link[];
 	
 	constructor () {
-		this.links = new Array<Link>(new Link("Players", "Players"), new Link("StyleTest", "Style Test"));
+		this.links = new Array<Link>(new Link("Players", "players"), new Link("StyleTest", "style test"));
 		console.log(this.links);
 	}
 }

@@ -9,13 +9,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>           
-            <a id="main-title" class="long-shadow-title" href="#page-top"></a>
+            <a id="main-title" class="long-shadow long-shadow-title" href="#page-top"></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li ng-repeat="link in nav.links">
-                    <a ui-sref="{{link.ref}}">{{link.name}}</a>
+                    <a class="long-shadow long-shadow-link" ui-sref="{{link.ref}}">{{link.name}}</a>
                 </li>
             </ul>
         </div>
