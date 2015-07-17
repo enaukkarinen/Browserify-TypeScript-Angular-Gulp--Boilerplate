@@ -16,19 +16,19 @@ angular.module("app", [
 		.state("welcome", {
 			name: "welcome",
 			url: "/welcome",
-  			templateUrl: "features/welcome/Welcome.html"
+  			templateUrl: "./features/welcome/Welcome.html"
 		})
 		.state("Players", {
 			name: "Players",
 			url: "/Players",
-        	templateUrl: "features/players/PlayersGrid.html",
+        	templateUrl: "./features/players/PlayersGrid.html",
 			controller: "PlayersController",
 			controllerAs: "pl"
 		})
 		.state("Player", {
 				name: "Player",
 				url: "/Player",
-            	templateUrl: "features/players/PlayerDetails.html",
+            	templateUrl: "./features/players/PlayerDetails.html",
 				controller: "PlayerController",
 				controllerAs: "pld",
 				params: {player: null}
@@ -36,7 +36,7 @@ angular.module("app", [
 		.state("StyleTest", {
 				name: "StyleTest",
 				url: "/StyleTest",
-            	templateUrl: "features/styleTest/StyleTest.html"
+            	templateUrl: "./features/styleTest/StyleTest.html"
 		});		
 }]);
 

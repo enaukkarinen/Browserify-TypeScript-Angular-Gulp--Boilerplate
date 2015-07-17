@@ -57,7 +57,7 @@ gulp.task('serve', ['build'], function(){
 			proxy: 'localhost:' + port,
 			port: 3000,
 			browser: 'chrome',
-			files: ['./src/**/*.ts'],
+			files: ['./src/**/*.ts', './src/**/*.less'],
 			ghostMode: {
 				clicks: true,
 				locations: false,

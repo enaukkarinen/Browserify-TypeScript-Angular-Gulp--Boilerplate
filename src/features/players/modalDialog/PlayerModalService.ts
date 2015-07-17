@@ -15,11 +15,11 @@ export default class PlayerModalService {
     private getTemplate(action: string): string {
         switch(action){
             case "create":
-            return "features/players/modalDialog/PlayerCreate.html";
+            return "./features/players/modalDialog/PlayerCreate.html";
             case "edit":
-            return "features/players/modalDialog/PlayerEdit.html";
+            return "./features/players/modalDialog/PlayerEdit.html";
             case "delete":
-            return "features/players/modalDialog/PlayerDelete.html";
+            return "./features/players/modalDialog/PlayerDelete.html";
             default:
                 throw {name : "PlayerActionError", message : "Invalid player action."};
         }
