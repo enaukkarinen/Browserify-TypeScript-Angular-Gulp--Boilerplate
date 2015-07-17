@@ -28,7 +28,8 @@ module.exports = function() {
       './bower_components/angular-ui-router/release/angular-ui-router.js',
       './bower_components/angular-modal-service/dst/angular-modal-service.js',
       './bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      './bower_components/bootstrap/dist/js/bootstrap.js'
+      './bower_components/bootstrap/dist/js/bootstrap.js',
+      './bower_components/toastr/toastr.js'
       ]
     },
     
@@ -49,7 +50,8 @@ module.exports = function() {
       less: './src/styles/**/*.*',
       vendor: [
         './bower_components/bootstrap/dist/css/bootstrap.css',
-        './bower_components/font-awesome/css/font-awesome.css'
+        './bower_components/font-awesome/css/font-awesome.css',
+        './bower_components/toastr/toastr.min.css'
       ],
     },
     

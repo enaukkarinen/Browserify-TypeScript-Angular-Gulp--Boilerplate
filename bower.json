@@ -20,6 +20,7 @@
     "font-awesome": "~4.3.0",
     "angular-ui-router": "~0.2.15",
     "angular-modal-service": "~0.6.6",
-    "angular-bootstrap": "~0.13.0"
+    "angular-bootstrap": "~0.13.0",
+    "toastr": "~2.1.1"
   }
 }
