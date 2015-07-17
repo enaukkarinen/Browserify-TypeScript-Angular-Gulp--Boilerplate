@@ -1,6 +1,6 @@
 
 /build/
-/src/client/templates.*
+src/templates.ts
 node_modules
 
 bower_components
