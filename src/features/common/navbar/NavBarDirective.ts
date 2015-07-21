@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/tsd.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 
 import NavBarController from "./NavBarController";
 
@@ -11,7 +11,7 @@ interface NavBarIsolatedScope extends angular.IScope
 export class NavBarDirective implements angular.IDirective {
     
     public restrict = 'EA';
-    public templateUrl = "./features/common/NavBar.html";
+    public templateUrl = "./features/common/navbar/NavBar.html";
     public controller = NavBarController;
     public controllerAs =  "nav";
     public scope = { title:  "@" };

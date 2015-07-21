@@ -1,7 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
-import "./features/common/NavBarModule";
+import "./features/common/navbar/NavBarModule";
 import "./features/players/PlayersModule";
 
 angular.module("app", [
