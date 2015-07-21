@@ -1,6 +1,18 @@
 @import "variables.less";
 @import "mixins.less";
 
+
+.panel-primary {
+	background-color: @primary-background;
+	color: @secondary-color;
+}
+
+.panel-secondary {
+    padding: 100px 0;
+	background-color: @secondary-background;
+	color: @primary-color;
+}
+
 .opt-panel-header {
 	text-align: center;
 	.container {
@@ -87,14 +99,4 @@
 			}
 		}
 	}
-}
-
-.opt-primary {
-	background-color: @primary-background;
-	color: @secondary-color;
-}
-
-.opt-secondary {
-	background-color: @secondary-background;
-	color: @secondary-color;
 }

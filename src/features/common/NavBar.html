@@ -1,7 +1,6 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-
+<nav class="navbar navbar-default navbar-fixed-top gradient-pattern">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
@@ -14,7 +13,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li ng-repeat="link in nav.links">
+                <li ng-repeat="link in nav.links" ui-sref-active="active">
                     <a class="long-shadow long-shadow-link" ui-sref="{{link.ref}}">{{link.name}}</a>
                 </li>
             </ul>

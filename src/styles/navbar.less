@@ -1,43 +1,42 @@
 
 @import "variables.less";
 
+.long-shadow-active > a {
+  color: red;
+}
 
-.navbar {
-	//text-transform: uppercase;
-	font-weight: 700;
-	a:focus {
-		outline: none;
-	}
-	.navbar-nav {
-    a {
-      text-align: center;
-     letter-spacing: 1px;
-     transition: all .1s ease-in;
-    }
-    a:hover {
-      letter-spacing: 0.2em;
-    }
-
-		li {
-			a:focus {
-				outline: none;
-			}
-		}
-	}
+.navbar-nav {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: rgba(255,255,255,1);
-}
-.navbar-default .navbar-nav > li > a:hover {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255,255,255,0.82);
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  min-width: 170px;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all .1s ease-in;
+  
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: @primary-background;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+color: @primary-background;
+background: none;
+}
 
 .navbar-default,
 .navbar-inverse {
     
-	background: fade(@primary-background, 90%);
+	background: fade(@secondary-background, 90%);
 	border-bottom: @primary-border;
 }
 
@@ -61,48 +60,64 @@
 }
 
 
-.long-shadow-title {
+.long-shadow {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  padding: 25px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 18px;
+  padding-left: 15px;
   border: none;
-  font: normal 40px/1 "Fredoka One", Coda-Regular, Helvetica, sans-serif;
-  color: rgba(255,255,255,1);
+  text-shadow:  1px 1px 0 #0199d9 , 2px 2px 0 #0199d9 , 3px 3px 0 #0199d9 , 4px 4px 0 #0199d9 , 5px 5px 0 #0199d9 , 6px 6px 0 #0199d9 , 7px 7px 0 #0199d9 , 8px 8px 0 #0199d9 , 9px 9px 0 #0199d9 , 10px 10px 0 #0199d9 , 11px 11px 0 #0199d9 , 12px 12px 0 #0199d9 , 13px 13px 0 #0199d9 , 14px 14px 0 #0199d9;
+}
+
+.long-shadow-title {
+  font: normal 25px/1 "Fredoka One", Coda-Regular, Helvetica, sans-serif;
+  color: @primary-background;
   text-align: center;
   -o-text-overflow: clip;
   text-overflow: clip;
-  text-shadow:  1px 1px 0 #0199d9 , 2px 2px 0 #0199d9 , 3px 3px 0 #0199d9 , 4px 4px 0 #0199d9 , 5px 5px 0 #0199d9 , 6px 6px 0 #0199d9 , 7px 7px 0 #0199d9 , 8px 8px 0 #0199d9 , 9px 9px 0 #0199d9 , 10px 10px 0 #0199d9 , 11px 11px 0 #0199d9 , 12px 12px 0 #0199d9 , 13px 13px 0 #0199d9 , 14px 14px 0 #0199d9;
 }
 
 .long-shadow-link {
-  display: inline-block;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  padding: 25px;
-  border: none;
-  font: normal 25px/1 "Fredoka One", Coda-Regular, Helvetica, sans-serif;
-  color: rgba(255,255,255,1);
+  font: normal 20px/1 "Fredoka One", Coda-Regular, Helvetica, sans-serif;
+  color: @primary-background;
   text-align: center;
   -o-text-overflow: clip;
   text-overflow: clip;
-  text-shadow:  1px 1px 0 #0199d9 , 2px 2px 0 #0199d9 , 3px 3px 0 #0199d9 , 4px 4px 0 #0199d9 , 5px 5px 0 #0199d9 , 6px 6px 0 #0199d9 , 7px 7px 0 #0199d9 , 8px 8px 0 #0199d9 , 9px 9px 0 #0199d9 , 10px 10px 0 #0199d9 , 11px 11px 0 #0199d9 , 12px 12px 0 #0199d9 , 13px 13px 0 #0199d9 , 14px 14px 0 #0199d9;
 }
 
-.long-shadow:hover {
-  color: #777;
 
-}
 
-.long-shadow:visited,
-.long-shadow:active
+.long-shadow-title:visited,
+.long-shadow-title:active
  {
-  color: rgba(255,255,255,1);
+  color: @primary-background;
   
 }
-
 .long-shadow-title:-webkit-any-link {
   text-decoration: none;
+}
+
+.gradient-pattern {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 100%;
+  font: normal 0.5px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: -webkit-linear-gradient(135deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -webkit-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), @secondary-background;
+  background: -moz-linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), -moz-linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), @secondary-background;
+  background: linear-gradient(-45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), linear-gradient(45deg, rgba(0,0,0,0) 25%, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, rgba(255,255,255,0.2) 75%), @secondary-background;
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 200em 200em;
+  background-size: 200em 200em;
 }

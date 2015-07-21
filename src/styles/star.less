@@ -1,24 +1,8 @@
 @import "variables.less";
 @import "mixins.less";
 
-
-.opt-primary {
-    background-color: @primary-background;
-    color: white;
-    border-color: @primary-color;
-    padding: 100px 0;
-}
-
-.secondary {
-    background-color: @secondary-background;
-    color: white;  
-}
-
-
-
-
-hr.star-light,
-hr.star-primary {
+hr.star-primary,
+hr.star-secondary {
     padding: 0;
     border: none;
     border-top: solid 5px;
@@ -27,8 +11,8 @@ hr.star-primary {
     margin: 25px auto 30px;
 }
 
-hr.star-light:after,
-hr.star-primary:after {
+hr.star-primary:after,
+hr.star-secondary:after {
     content: "\f005";
     font-family: FontAwesome;
     display: inline-block;
@@ -36,15 +20,6 @@ hr.star-primary:after {
     top: -0.8em;
     font-size: 2em;
     padding: 0 0.25em;
-}
-
-hr.star-light {
-    border-color: @secondary-color;
-}
-
-hr.star-light:after {
-    background-color: @secondary-background;
-    color: white;
 }
 
 hr.star-primary {
@@ -56,6 +31,14 @@ hr.star-primary:after {
     color: @secondary-color;
 }
 
+hr.star-secondary {
+    border-color: @secondary-color;
+}
+
+hr.star-secondary:after {
+    background-color: @secondary-background;
+    color: @primary-color;
+}
 
 section h2 {
   margin: 0;
