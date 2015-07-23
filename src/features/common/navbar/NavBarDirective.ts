@@ -21,7 +21,7 @@ export class NavBarDirective implements angular.IDirective {
     {
         this.link = (scope: NavBarIsolatedScope, element: angular.IAugmentedJQuery, attrs: angular.IAttributes) =>
         {
-            element.find("#main-title").text(scope.title);
+            element.find("#main-title").append(scope.title);
         };
     }
 

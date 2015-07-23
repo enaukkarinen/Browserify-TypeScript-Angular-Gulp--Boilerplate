@@ -1,8 +1,8 @@
 
 @import "variables.less";
 
-.long-shadow-active > a {
-  color: red;
+div.image:before {
+   content:url('images/favicon-96-96.png');
 }
 
 .navbar-nav {
@@ -16,7 +16,7 @@
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 0px;
-  min-width: 170px;
+  min-width: 150px;
   text-align: center;
   letter-spacing: 1px;
   transition: all .1s ease-in;
@@ -42,7 +42,7 @@ background: none;
 
 @media(min-width:768px) {
     .navbar-fixed-top {
-        padding: 5px 0;
+
         -webkit-transition: padding 0.3s;
         -moz-transition: padding 0.3s;
         transition: padding 0.3s;
@@ -61,14 +61,10 @@ background: none;
 
 
 .long-shadow {
-  display: inline-block;
+  display: inline;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-bottom: 18px;
-  padding-left: 15px;
   border: none;
   text-shadow:  1px 1px 0 #0199d9 , 2px 2px 0 #0199d9 , 3px 3px 0 #0199d9 , 4px 4px 0 #0199d9 , 5px 5px 0 #0199d9 , 6px 6px 0 #0199d9 , 7px 7px 0 #0199d9 , 8px 8px 0 #0199d9 , 9px 9px 0 #0199d9 , 10px 10px 0 #0199d9 , 11px 11px 0 #0199d9 , 12px 12px 0 #0199d9 , 13px 13px 0 #0199d9 , 14px 14px 0 #0199d9;
 }
@@ -121,3 +117,9 @@ background: none;
   -webkit-background-size: 200em 200em;
   background-size: 200em 200em;
 }
+
+img.nav-logo { 
+display: inline;
+max-width: 20%;
+margin: 5px;
+  }
