@@ -1,22 +1,14 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
-"use strict";
+import {AccessService, Module} from "../../dataservices/AccessService";
 
-class Link {	
-	ref: string;
-	name: string;
-	constructor(r: string, n: string){
-		this.ref = r;
-		this.name = n;
-	}
-}
 
 export default class NavBarCtrl {
 
-	links: Link[];
+	links: Module[];
 	
-	constructor () {
-		this.links = new Array<Link>(new Link("Players", "players"), new Link("StyleTest", "style test"));
-		console.log(this.links);
+	static $inject = ["AccessService"];
+	constructor (private AccessService :AccessService) {
+		this.links = this.AccessService.getAccess("test");
 	}
 }
 

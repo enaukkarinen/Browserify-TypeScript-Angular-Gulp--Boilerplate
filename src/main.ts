@@ -1,11 +1,15 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
+import "./features/auth/AuthModule";
+import "./features/dataservices/AccessService";
 import "./features/common/navbar/NavBarModule";
 import "./features/players/PlayersModule";
 
 angular.module("app", [
   "app.templates",
+  "DataServiceModule",
+  "AuthModule",
   "NavBarModule",
   "PlayersModule",
   "ui.router",
@@ -18,7 +22,7 @@ angular.module("app", [
 			url: "/welcome",
   			templateUrl: "./features/welcome/Welcome.html"
 		})
-		.state("Players", {
+		.state("players", {
 			name: "Players",
 			url: "/Players",
         	templateUrl: "./features/players/PlayersGrid.html",
@@ -26,17 +30,26 @@ angular.module("app", [
 			controllerAs: "pl"
 		})
 		.state("Player", {
-				name: "Player",
-				url: "/Player",
-            	templateUrl: "./features/players/PlayerDetails.html",
-				controller: "PlayerController",
-				controllerAs: "pld",
-				params: {player: null}
+			name: "Player",
+			url: "/Player",
+        	templateUrl: "./features/players/PlayerDetails.html",
+			controller: "PlayerController",
+			controllerAs: "pld",
+			params: {player: null}
 		})
-		.state("StyleTest", {
-				name: "StyleTest",
-				url: "/StyleTest",
-            	templateUrl: "./features/styleTest/StyleTest.html"
+		.state("register", {
+			name: "register",
+			url: "/register",
+        	templateUrl: "./features/auth/Register.html",
+			controller: "RegisterController",
+			controllerAs: "req"
+		})
+		.state("login", {
+			name: "login",
+			url: "/login",
+	    	templateUrl: "./features/auth/Login.html",
+			controller: "LoginController",
+			controllerAs: "log"
 		});		
 }]);
 
