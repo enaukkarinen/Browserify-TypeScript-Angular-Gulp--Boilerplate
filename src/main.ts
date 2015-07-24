@@ -2,7 +2,7 @@
 
 import "./templates";
 import "./features/auth/AuthModule";
-import "./features/dataservices/AccessService";
+import "./features/dataservices/DataServiceModule";
 import "./features/common/navbar/NavBarModule";
 import "./features/players/PlayersModule";
 

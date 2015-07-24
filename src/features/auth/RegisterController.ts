@@ -4,8 +4,6 @@
 
 export default class RegisterCtrl {
 	
-
-	
     static $inject = ["$stateParams"];
 
     constructor(private $stateParams) {
@@ -13,5 +11,5 @@ export default class RegisterCtrl {
 	}
 }
 
-angular.module("DataServiceModule").controller("PlayerController", RegisterCtrl);
+angular.module("AuthModule").controller("RegisterController", RegisterCtrl);
 

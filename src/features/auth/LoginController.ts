@@ -13,4 +13,4 @@ export default class LoginCtrl {
 	}
 }
 
-angular.module("DataServiceModule").controller("LoginController", LoginCtrl);
+angular.module("AuthModule").controller("LoginController", LoginCtrl);

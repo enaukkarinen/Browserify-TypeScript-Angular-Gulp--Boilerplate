@@ -3,7 +3,7 @@
 "use strict";
 
 
-var m = angular.module("DataServiceModule", []);
+var m = angular.module("AuthModule", []);
 
 import "./LoginController";
 import "./RegisterController";
