@@ -16,7 +16,7 @@ div.image:before {
   padding-right: 15px;
   padding-bottom: 15px;
   padding-left: 0px;
-  min-width: 150px;
+  min-width: 120px;
   text-align: center;
   letter-spacing: 1px;
   transition: all .1s ease-in;
@@ -78,7 +78,7 @@ background: none;
 }
 
 .long-shadow-link {
-  font: normal 20px/1 "Fredoka One", Coda-Regular, Helvetica, sans-serif;
+  font: normal 20px "Fredoka One", Coda-Regular, Helvetica, sans-serif;
   color: @primary-background;
   text-align: center;
   -o-text-overflow: clip;
@@ -88,7 +88,9 @@ background: none;
 
 
 .long-shadow-title:visited,
-.long-shadow-title:active
+.long-shadow-title:active,
+.long-shadow-title:hover,
+.long-shadow-title:focus
  {
   color: @primary-background;
   
@@ -96,7 +98,9 @@ background: none;
 .long-shadow-title:-webkit-any-link {
   text-decoration: none;
 }
-
+a {
+    text-decoration: none !important;
+}
 .gradient-pattern {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -118,13 +122,32 @@ background: none;
   background-size: 200em 200em;
 }
 
-img.nav-logo { 
+.long-shadow-title img { 
   display: inline;
   max-width: 20%;
   margin: 5px;
+}
+
+@media (max-width: 767px) { 
+    .long-shadow-title img {
+        max-width: 10%;
+    }
 }
  
 // browser scrollbar fix  
 html { 
   overflow-y: scroll; 
+}
+
+:focus {
+  outline: 0;
+  -moz-outline:0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:active, a:focus {
+    outline:none;
 }

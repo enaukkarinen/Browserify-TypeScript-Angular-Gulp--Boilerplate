@@ -42,15 +42,20 @@ angular.module("app", [
 			url: "/register",
         	templateUrl: "./features/auth/Register.html",
 			controller: "RegisterController",
-			controllerAs: "req"
+			controllerAs: "rg"
 		})
 		.state("login", {
 			name: "login",
 			url: "/login",
 	    	templateUrl: "./features/auth/Login.html",
 			controller: "LoginController",
-			controllerAs: "log"
-		});		
+			controllerAs: "lg"
+		})
+		.state("forgotpw", {
+			name: "forgotpassword",
+			url: "/forgotpassword",
+	    	templateUrl: "./features/auth/ForgotPW.html"
+		});
 }]);
 
 
