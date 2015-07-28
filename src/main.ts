@@ -1,15 +1,11 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
-import "./features/auth/AuthModule";
-import "./features/dataservices/DataServiceModule";
 import "./features/common/navbar/NavBarModule";
 import "./features/players/PlayersModule";
 
 angular.module("app", [
   "app.templates",
-  "DataServiceModule",
-  "AuthModule",
   "NavBarModule",
   "PlayersModule",
   "ui.router",
@@ -36,25 +32,6 @@ angular.module("app", [
 			controller: "PlayerController",
 			controllerAs: "pld",
 			params: {player: null}
-		})
-		.state("register", {
-			name: "register",
-			url: "/register",
-        	templateUrl: "./features/auth/Register.html",
-			controller: "RegisterController",
-			controllerAs: "rg"
-		})
-		.state("login", {
-			name: "login",
-			url: "/login",
-	    	templateUrl: "./features/auth/Login.html",
-			controller: "LoginController",
-			controllerAs: "lg"
-		})
-		.state("forgotpw", {
-			name: "forgotpassword",
-			url: "/forgotpassword",
-	    	templateUrl: "./features/auth/ForgotPW.html"
 		});
 }]);
 
