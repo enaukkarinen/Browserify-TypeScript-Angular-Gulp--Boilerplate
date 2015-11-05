@@ -34,7 +34,7 @@ module.exports = function() {
     },
     
     templateCache: {
-      html: './src/features/**/*.html',
+      html: './src/**/*.html',
       file: 'templates.*',
       dest: './src/',
       options: {
