@@ -40,7 +40,7 @@ module.exports = function() {
       options: {
         module: 'app.templates',
         standalone: true,
-        root: './features/'
+        root: './'
       }
     },
        

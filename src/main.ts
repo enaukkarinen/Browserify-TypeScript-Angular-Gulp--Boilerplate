@@ -1,19 +1,21 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
+import "./features/home/home";
+
 
 angular.module("app", [
   "app.templates",
   "ui.router",
   "ui.bootstrap"])
  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("welcome");
+    $urlRouterProvider.otherwise("home");
 	$stateProvider
-		.state("welcome", {
-			name: "welcome",
-			url: "/welcome",
-  			templateUrl: "./features/welcome/Welcome.html"
+		.state("home", {
+			name: "home",
+			url: "/home",
+  			templateUrl: "./features/home/home.html",
+			controller: "HomeController",
+			controllerAs: "home"
 		});
-		
 }]);
-
