@@ -11,12 +11,12 @@ angular.module("app", [
   "ui.router",
   "ui.bootstrap"])
  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("welcome");
+    $urlRouterProvider.otherwise("home");
 	$stateProvider
-		.state("welcome", {
-			name: "welcome",
-			url: "/welcome",
-  			templateUrl: "welcome.html"
+		.state("home", {
+			name: "home",
+			url: "/home",
+  			templateUrl: "home.html"
 		})
 		.state("beefs", {
 			name: "beefs",

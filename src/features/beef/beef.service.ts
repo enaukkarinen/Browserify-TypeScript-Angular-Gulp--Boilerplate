@@ -23,9 +23,9 @@ export default class BeefService implements IBeefService {
     constructor() {
 		this._beefs = [
 			new Beef(1, "Kobe", 10, 1),
-			new Beef(2, "Top Sirloin Cap", 19, 3),
-			new Beef(3, "Tenderloin", 19, 2),
-			new Beef(4, "Strip Loin / New York Strip", 19, 1)
+			new Beef(2, "Top Sirloin Cap", 6, 3),
+			new Beef(3, "Tenderloin", 8, 2),
+			new Beef(4, "Strip Loin / New York Strip", 8, 1)
 		];
 	}
 	

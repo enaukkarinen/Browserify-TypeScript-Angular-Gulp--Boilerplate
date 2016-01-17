@@ -13,6 +13,8 @@ module.exports = function() {
     nodeapp: './server.js',
     defaultport: 7203,
     
+    browser: 'chrome',
+    
     // scripts
     scripts: {   
       // app js bundle
