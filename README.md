@@ -9,7 +9,7 @@ To get started run the following commands:
 To get a list of available gulp commands, just type gulp.
 
 - The boilerplate's build task collects your application code and 3rd party dependencies into their own js bundles and creates the corresponding mapping files. 
-- CSS files are handled simularly. 
+- CSS files are handled in the same manner. 
 - HTML templates are cached in a separate js file.
 
 
