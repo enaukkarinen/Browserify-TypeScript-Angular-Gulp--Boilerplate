@@ -1,13 +1,13 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
-import "./features/common/navbar/NavBarModule";
-import "./features/players/PlayersModule";
+import "./features/core/core.module";
+import "./features/beef/beef.module";
 
 angular.module("app", [
   "app.templates",
-  "NavBarModule",
-  "PlayersModule",
+  "app.core",
+  "app.beef",
   "ui.router",
   "ui.bootstrap"])
  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -16,22 +16,22 @@ angular.module("app", [
 		.state("welcome", {
 			name: "welcome",
 			url: "/welcome",
-  			templateUrl: "./features/welcome/Welcome.html"
+  			templateUrl: "welcome.html"
 		})
-		.state("players", {
-			name: "Players",
-			url: "/Players",
-        	templateUrl: "./features/players/PlayersGrid.html",
-			controller: "PlayersController",
-			controllerAs: "pl"
+		.state("beefs", {
+			name: "beefs",
+			url: "/beefs",
+        	templateUrl: "beefs.html",
+			controller: "BeefsController",
+			controllerAs: "bfs"
 		})
-		.state("Player", {
-			name: "Player",
-			url: "/Player",
-        	templateUrl: "./features/players/PlayerDetails.html",
-			controller: "PlayerController",
-			controllerAs: "pld",
-			params: {player: null}
+		.state("beef", {
+			name: "beef",
+			url: "/beef",
+        	templateUrl: "beef.html",
+			controller: "BeefController",
+			controllerAs: "bf",
+			params: {beef: null}
 		});
 }]);
 

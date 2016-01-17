@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import NavBarController from "./NavBarController";
+import NavBarController from "./navbar.controller";
 
 interface NavBarIsolatedScope extends angular.IScope
 {
@@ -11,7 +11,7 @@ interface NavBarIsolatedScope extends angular.IScope
 export class NavBarDirective implements angular.IDirective {
     
     public restrict = 'EA';
-    public templateUrl = "./features/common/navbar/NavBar.html";
+    public templateUrl = "navbar.html";
     public controller = NavBarController;
     public controllerAs =  "nav";
     public scope = { title:  "@" };
@@ -32,4 +32,4 @@ export class NavBarDirective implements angular.IDirective {
     }
 }
 
-angular.module("NavBarModule").directive("optNavBar", NavBarDirective.factory());
+angular.module("app.core").directive("bfNavBar", NavBarDirective.factory());

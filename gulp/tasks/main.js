@@ -4,7 +4,7 @@ var gulp        = require('gulp');
 var browserify  = require('browserify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
-
+var gutil       = require('gulp-util');
 var argv        = require('yargs').argv;
 var gulpif      = require('gulp-if');
 var uglify      = require('gulp-uglify');
@@ -21,6 +21,9 @@ gulp.task('main', ['templates'],  function() {
     .add(config.scripts.src)
     .plugin(tsify)
     .bundle()
+     .on('error', function (e) {
+        gutil.log(gutil.colors.red('Bundle error:', e.message));
+      })
     .pipe(gulpif(!argv.min, exorcist(config.build + 'main.js.map')))  
     .pipe(source('main.js'))
     .pipe(gulpif(argv.min, buffer())) 

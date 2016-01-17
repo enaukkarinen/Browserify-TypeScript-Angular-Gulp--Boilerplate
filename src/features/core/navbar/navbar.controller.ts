@@ -10,12 +10,13 @@ class Link
 		this.ref = r;
 	}	
 }
-export default class NavBarCtrl {
+
+export default class NavBarController {
 	links;
 	constructor () {
-		this.links = new Array<Link>(new Link("Players", "players"));
+		this.links = new Array<Link>(new Link("Beefs", "beefs"));
 			console.log(this.links);
 	}
 }
 
-angular.module("NavBarModule").controller("NavBarController", NavBarCtrl);
+angular.module("app.core").controller("NavBarController", NavBarController);

@@ -1,25 +1,24 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-import Player from  "../Player";
+import { Beef } from  "../beef";
 import { ModalDialogParameters, IModalDialogParameters } from "./ModalDialogParameters";
 
 "use strict";
 
-export default class PlayerModalCtrl {
+export default class BeefModalController {
 	
-	player :Player;
+	beef :Beef;
 	
 	
     static $inject = ["$modalInstance", "dialogParams"];
-
     constructor(private $modalInstance, private dialogParams : IModalDialogParameters) {
-		this.player = dialogParams.player;
+		this.beef = dialogParams.beef;
 	}
 	
 	proceed () {
 		console.log(this.$modalInstance);
 		
-		this.$modalInstance.close(this.player);
+		this.$modalInstance.close(this.beef);
 	}
 	
 	cancel () {
@@ -27,5 +26,5 @@ export default class PlayerModalCtrl {
 	}
 }
 
-angular.module("PlayersModule").controller("PlayerModalController", PlayerModalCtrl);
+angular.module("app.beef").controller("BeefModalController", BeefModalController);
 

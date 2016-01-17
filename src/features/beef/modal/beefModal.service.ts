@@ -1,13 +1,12 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
    
-import Player from  "../Player";
-import { IModalDialogParameters, ModalDialogParameters } from "./ModalDialogParameters";
-import PlayerModalCtrl from "./PlayerModalController";
+import { Beef } from  "../beef";
+import { IModalDialogParameters, ModalDialogParameters } from "./modalDialogParameters";
+import BeefModalController from "./beefModal.controller";
 
-export default class PlayerModalService {
+export default class BeefModalService {
     
     static $inject = ["$modal"];
-    
     constructor (private $modal: angular.ui.bootstrap.IModalService) {
         
     }
@@ -15,13 +14,13 @@ export default class PlayerModalService {
     private getTemplate(action: string): string {
         switch(action){
             case "create":
-            return "./features/players/modalDialog/PlayerCreate.html";
-            case "edit":
-            return "./features/players/modalDialog/PlayerEdit.html";
+                return "beef.create.html";
             case "delete":
-            return "./features/players/modalDialog/PlayerDelete.html";
+                return "beef.delete.html";
+            case "edit":
+                return "beef.edit.html";
             default:
-                throw {name : "PlayerActionError", message : "Invalid player action."};
+                throw {name : "BeefActionError", message : "Invalid beef action."};
         }
     }
     
@@ -30,7 +29,7 @@ export default class PlayerModalService {
         var options: angular.ui.bootstrap.IModalSettings = {
             backdrop: 'static',
             templateUrl: this.getTemplate(params.action),
-            controller: PlayerModalCtrl,
+            controller: BeefModalController,
             controllerAs: "md",
             //size: 'sm',
             resolve: {
@@ -43,5 +42,5 @@ export default class PlayerModalService {
     }
 }
 
-angular.module("PlayersModule").service("PlayerModalService", PlayerModalService);
+angular.module("app.beef").service("BeefModalService", BeefModalService);
 

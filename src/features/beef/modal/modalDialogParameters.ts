@@ -1,19 +1,19 @@
 
-import Player from "../Player";
+import { Beef } from "../beef";
 
 export interface IModalDialogParameters {
-	player: Player;
+	beef: Beef;
 	action: string;
 }
 
 export class ModalDialogParameters implements IModalDialogParameters {
 	
-	public player: Player;
+	public beef: Beef;
 	public action: string;
 	
-	constructor(a: string, p: Player) {
+	constructor(a: string, b: Beef) {
 		this.action = a;
-		this.player = p;
+		this.beef = b;
 	}
 }
 

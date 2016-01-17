@@ -1,0 +1,36 @@
+<div class="panel-header panel-primary">
+  <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Beefs</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Popularity</th>
+                <th></th>
+                <th></th>
+                <th><a href="#" ng-click="bfs.create()">Add</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="b in bfs.beefs">
+                <td style="cursor: pointer; text-align: left;"><a ui-sref="beef({ beef: b })">{{ b.name }}</a></td>
+                <td style="text-align: left;">{{b.grade}}</td>
+                <td style="text-align: left;">{{b.popularity}}</td>
+                <td> <button class="btn" type="button" ng-click="bfs.edit(b)">Edit</button></td>
+                <td> <button class="btn" type="button" ng-click="bfs.delete(b)">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="footer">
+
+        </div>
+    </div>
+</div>
