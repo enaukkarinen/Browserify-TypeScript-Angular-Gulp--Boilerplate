@@ -1,11 +1,12 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import "./templates";
-import "./features/home/home";
+import "./features/home/home.controller";
 
 
 angular.module("app", [
   "app.templates",
+  "app.home",
   "ui.router",
   "ui.bootstrap"])
  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -14,8 +15,8 @@ angular.module("app", [
 		.state("home", {
 			name: "home",
 			url: "/home",
-  			templateUrl: "./features/home/home.html",
+  			templateUrl: "home.html",
 			controller: "HomeController",
-			controllerAs: "home"
+			controllerAs: "h"
 		});
 }]);

@@ -13,6 +13,8 @@ module.exports = function() {
     nodeapp: './server.js',
     defaultport: 7203,
     
+    browser: 'chrome',
+    
     // scripts
     scripts: {   
       // app js bundle
@@ -40,7 +42,7 @@ module.exports = function() {
       options: {
         module: 'app.templates',
         standalone: true,
-        root: './'
+        transformUrl: function (url) { return url.replace(/^.*[\\\/]/, ''); }
       }
     },
        
