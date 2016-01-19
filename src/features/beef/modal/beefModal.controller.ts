@@ -1,7 +1,7 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
 import { Beef } from  "../beef";
-import { ModalDialogParameters, IModalDialogParameters } from "./ModalDialogParameters";
+import { ModalDialogParameters, IModalDialogParameters } from "./modalDialogParameters";
 
 "use strict";
 
