@@ -14,7 +14,7 @@ class Link
 export default class NavBarController {
 	links;
 	constructor () {
-		this.links = new Array<Link>(new Link("Beefs", "beefs"));
+		this.links = new Array<Link>(new Link("Beef steaks", "beefs"));
 			console.log(this.links);
 	}
 }
