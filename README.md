@@ -4,12 +4,12 @@ To get started run the following commands:
 
 - npm install
 - bower install
-- gulp serve
+- gulp serve (attempts to start Chrome. Browser choise can be configured in gulp/config.js)
 
 To get a list of available gulp commands, just type gulp.
 
 - The boilerplate's build task collects your application code and 3rd party dependencies into their own js bundles and creates the corresponding mapping files. 
-- CSS files are handled in the same manner. 
+- LESS & CSS files are handled in the same manner. 
 - HTML templates are cached in a separate js file.
 
 
